@@ -1,26 +1,30 @@
-# Archivos del sistema operativo (Arch/CachyOS)
+# Archivos del sistema
 .DS_Store
 Thumbs.db
-*.swp
 
-# IntelliJ IDEA
-.idea/
-*.iml
-*.iws
-*.ipr
+# IntelliJ IDEA (Ignorar en cualquier subcarpeta)
+**/.idea/
+**/*.iml
 out/
 
-# Visual Studio Code
-.vscode/
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-*.code-workspace
+# VS Code
+**/.vscode/
+!**/.vscode/settings.json
 
-# Build tools / Archivos compilados (Java, C++, etc.)
-/bin/
-/build/
-/target/
-*.class
-*.jar
-*.exe
+# Java / Kotlin (Ignorar compilados en cualquier subcarpeta)
+**/bin/
+**/build/
+**/target/
+**/*.class
+**/*.jar
+
+# Python
+**/__pycache__/
+**/*.pyc
+**/.venv/
+**/env/
+
+# Angular / Web
+**/node_modules/
+**/dist/
+**/.angular/
