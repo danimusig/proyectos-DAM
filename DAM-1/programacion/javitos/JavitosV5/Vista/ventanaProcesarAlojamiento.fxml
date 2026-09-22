@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.VentanaProcesarAlojamientoController">
+   <children>
+      <TextField fx:id="txfNombreA" layoutX="307.0" layoutY="167.0" prefHeight="31.0" prefWidth="234.0" promptText="Nombre del alojamiento" />
+      <TextField fx:id="txfTarifa" layoutX="307.0" layoutY="209.0" prefHeight="25.0" prefWidth="190.0" promptText="Tarifa por noche" />
+      <CheckBox fx:id="cboxDisponibilidad" layoutX="304.0" layoutY="335.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="154.0" text="Actualmente Alquilada" />
+      <CheckBox fx:id="cboxChimenea" layoutX="304.0" layoutY="294.0" mnemonicParsing="false" text="Chimenea" />
+      <CheckBox fx:id="cboxJacuzzi" layoutX="440.0" layoutY="294.0" mnemonicParsing="false" text="Jacuzzi" />
+      <Slider fx:id="sldhVecesAlquilada" blockIncrement="1.0" layoutX="307.0" layoutY="372.0" prefHeight="28.0" prefWidth="276.0" showTickMarks="true" />
+      <Button fx:id="btnGuardar" layoutX="286.0" layoutY="443.0" mnemonicParsing="false" onAction="#guardarAlojamiento" text="Guardar" />
+      <Button fx:id="btnReiniciar" layoutX="412.0" layoutY="443.0" mnemonicParsing="false" onAction="#reiniciarCampos" text="Reiniciar" />
+      <Label layoutX="228.0" layoutY="174.0" text="Nombre" />
+      <Label layoutX="236.0" layoutY="216.0" text="Tarifa" />
+      <Label layoutX="222.0" layoutY="259.0" text="Capacidad" />
+      <Button fx:id="btnVolver" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#volver" text="Volver" />
+      <Label layoutX="207.0" layoutY="372.0" text="Veces Alquilada" />
+      <ImageView fitHeight="114.0" fitWidth="476.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="txfCapacidad" layoutX="306.0" layoutY="252.0" prefHeight="25.0" prefWidth="190.0" promptText="Nº Personas" />
+      <Label fx:id="sldhValue" layoutX="315.0" layoutY="400.0" text="Label" />
+   </children>
+</AnchorPane>

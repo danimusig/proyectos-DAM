@@ -1,0 +1,359 @@
+/*Investigando vi que todas las páginas traen  algunos estilos por defecti y con esto aseguras 
+tener un "lienzo" en blanco.*/
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #ffffff;
+    border: 1px solid lightgray;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem 0;
+}
+
+.logo {
+    width: 60%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.main__title {
+    color: #3535e0;
+    font-size: 2.0rem;
+    margin-bottom: 1rem;
+    font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Console',  monospace;
+}
+
+.main__nav {
+    width: 100%;
+    background-color: lightsteelblue;
+    border: 1px solid lightgray;
+    margin-bottom: 1.5rem;
+    font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Console',  monospace;
+}
+
+.nav__bar-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.nav__bar-list li {
+    background-color: aquamarine;
+    border-radius: 10px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.nav__bar-list li:hover {
+    background-color: #7fffd4;
+    transform: scale(1.05);
+}
+
+.nav__bar-list a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #3535e0;
+    font-weight: bold;
+}
+
+.main__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+    display: grid;
+    gap: 1.5rem;
+}
+
+#head_banner {
+    text-align: center;
+}
+
+#head_banner img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    height: auto;
+}
+
+.articles__grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+
+.main__article {
+    background-color: #ffffff;
+    border: 1px solid lightgray;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.main__article h2 {
+    color: #3535e0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid lightsteelblue;
+    padding-bottom: 0.3rem;
+    font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Console',  monospace;
+}
+
+.main__article-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main__article-content p {
+    margin-bottom: 0.5rem;
+}
+
+.main__article-content-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 1rem 0;
+}
+
+.main__article-content-list li {
+    background-color: #f8f9fa;
+    border-left: 5px solid lightsteelblue;
+    border-radius: 5px;
+    padding: 0.8rem;
+    
+}
+
+.contenedor__cita {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.contenedor__cita img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.contenedor__cita figcaption {
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Console',  monospace;
+    color: #555;
+    font-size: 0.9em;
+    margin-top: 0.5rem;
+}
+
+#markdownLanguageTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 2px solid lightsteelblue;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+#markdownLanguageTable th,
+#markdownLanguageTable td {
+    border: 1px solid lightsteelblue;
+    padding: 0.8rem;
+    text-align: left;
+}
+
+#markdownLanguageTable th {
+    background-color: lightsteelblue;
+    color: #000;
+    
+}
+
+.tech-logo {
+    width: 60px;
+    height: auto;
+}
+
+.main__article-sub-section {
+    background-color: #f8f9fa;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.main__article-sub-section h3{
+    font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Console',  monospace;
+
+}
+
+.image__center {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+#databases .image__center img {
+    width: 40%;
+    max-width: 200px;
+}
+
+#programming .image__center img {
+    width: 30%;
+    max-width: 150px;
+}
+
+.contact__form fieldset {
+    border: 1px solid lightsteelblue;
+    border-radius: 10px;
+    padding: 1.5rem;
+    background-color: #f4f4f4;
+}
+
+.contact__form legend {
+    background-color: lightsteelblue;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.form__group {
+    margin-bottom: 1rem;
+}
+
+.form__group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+.form__group input,
+.form__group select,
+.form__group textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form__group input:focus,
+.form__group select:focus,
+.form__group textarea:focus {
+    border-color: #3535e0;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(53, 53, 224, 0.2);
+}
+
+::placeholder {
+    font-style: italic;
+    opacity: 0.7;
+    color: #666;
+}
+
+.btn {
+    background-color: lightsteelblue;
+    border: none;
+    border-radius: 5px;
+    padding: 0.7rem 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    color: #000;
+}
+
+.btn:hover {
+    background-color: #b0d0ff;
+}
+
+.btn:active {
+    background-color: #3535e0;
+    color: white;
+    transform: scale(0.98);
+}
+
+.footer__section {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid lightgray;
+    font-size: 0.9rem;
+    color: #555;
+    width: 100%;
+}
+
+/*No lo hemos visto pero investigando he visto el condicional @media de CSS es muy usado
+porque nos permite cambiar el layout del contenido de la pagina web cuando se cumple la condicion
+de resolución en este caso. */
+@media (max-width: 767px) {
+    .nav__bar-list {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav__bar-list li {
+        width: 100%;
+    }
+
+    .logo {
+        width: 50%;
+    }
+
+    .main__title {
+        font-size: 1.3rem;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .articles__grid {
+        grid-template-columns: 1fr 1fr;
+
+        /*Me ha parecido muy util este metodo para hacer el layout que permite guardar 
+        "variables" con los contenedores con grid-area y asignarles una posición de forma
+        visual con grid-template-areas en las columnas previamente definidas.*/
+        grid-template-areas:
+            "about contact"
+            "learning learning";
+    }
+
+    #aboutMe {
+        grid-area: about;
+    }
+
+    #contact {
+        grid-area: contact;
+    }
+
+    #learningBlocks {
+        grid-area: learning;
+    }
+
+    .main__nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+}

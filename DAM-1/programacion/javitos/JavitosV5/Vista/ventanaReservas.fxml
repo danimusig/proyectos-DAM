@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1050.0" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.VentanaGestionReservas">
+   <children>
+      <TableView fx:id="tbReservas" layoutX="408.0" layoutY="140.0" prefHeight="446.0" prefWidth="628.0">
+         <columns>
+            <TableColumn fx:id="tbcCliente" prefWidth="154.0" text="Cliente" />
+            <TableColumn fx:id="tbcAlojamiento" prefWidth="133.0" text="Alojamiento" />
+            <TableColumn fx:id="tbcFechaEntrada" prefWidth="113.0" text="Fecha Entrada" />
+            <TableColumn fx:id="tbcFechaSalida" prefWidth="111.0" text="Fecha Salida" />
+            <TableColumn fx:id="tbcPrecioTotal" prefWidth="115.0" text="Total" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnAnyadirReserva" layoutX="116.0" layoutY="203.0" mnemonicParsing="false" onAction="#anyadirReserva" prefHeight="33.0" prefWidth="201.0" text="➕   Añadir Reservas" />
+      <Button fx:id="btnModificarReserva" layoutX="116.0" layoutY="317.0" mnemonicParsing="false" onAction="#modificarReserva" prefHeight="33.0" prefWidth="201.0" text="📝   Modificar Reservas" />
+      <Button fx:id="btnEliminarReserva" layoutX="116.0" layoutY="427.0" mnemonicParsing="false" onAction="#eliminarReserva" prefHeight="33.0" prefWidth="201.0" text="❌   Eliminar Reserva" />
+      <Button fx:id="btnVolverMenuP" layoutX="14.0" layoutY="550.0" mnemonicParsing="false" onAction="#volverMenuP" prefHeight="33.0" prefWidth="94.0" text="Volver" />
+      <Label layoutX="408.0" layoutY="80.0" text="Filtrar por alojamiento:" />
+      <ImageView fitHeight="113.0" fitWidth="377.0" layoutX="15.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" />
+      <ComboBox fx:id="cmbFiltroAlojamiento" layoutX="408.0" layoutY="102.0" onAction="#filtrarAlojamiento" prefWidth="150.0" />
+      <TextField fx:id="txfDniCliente" layoutX="630.0" layoutY="104.0" onKeyTyped="#filtrarCliente" />
+      <Label layoutX="630.0" layoutY="80.0" prefHeight="17.0" prefWidth="116.0" text="Filtrar por cliente:" />
+   </children>
+</AnchorPane>

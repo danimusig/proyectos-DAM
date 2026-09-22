@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>STEMDO Rookie Site </title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+    <header id="siteHeader">
+        <img src="../src/img/Header_logo.svg" alt="Cabezera con el logo de STEMDO" class="logo" />
+        <h1 class="main__title">Experiencia Rookie en STEMDO</h1>
+        
+    </header>
+
+    <nav class="main__nav">
+        <!-- El atributo role ayuda con la accesibilidad del código ayundando a los lectores de pantalla -->
+        <ul class="nav__bar-list" role="navigation">
+            <div class="theme-switch__container">
+                <label for="theme-checkbox" class="theme-switch">
+                    <input type="checkbox" id="theme-checkbox">
+                    <div class="slider round">
+
+                    </div>>
+                </label>
+                <div id="theme-text"></div>
+            </div>
+            <li><a href="#aboutMe">Sobre mí</a></li>
+            <li><a href="#learningBlocks">Contenidos</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="main__container">
+
+        <div class="image__container" id="head_banner">
+            <img src="../src/img/stemdo-office.webp" alt="Imágen de las oficinas de STEMDO en Huelva" />
+        </div>
+
+        <div class="articles__grid">
+            <article class="main__article" id="aboutMe">
+                <h2>Sobre mí</h2>
+                <div class="main__article-content">
+                    <p>
+                        ¡Hola! Soy un apasionado de la tecnología en constante aprendizaje
+                        y actualmente estoy dando mis primeros pasos profesionales como
+                        estudiante en prácticas en <strong>STEMDO</strong>. Mi objetivo
+                        durante esta etapa es transformar la teoría en
+                        <strong>soluciones reales</strong>, sumergiéndome en un entorno de
+                        desarrollo profesional y colaborativo. Durante mi estancia en
+                        <strong>STEMDO</strong>, estaré potenciando mis habilidades
+                        técnicas en las tecnologías que mueven el sector.
+                    </p>
+                    <ul class="main__article-content-list">
+                        <li>
+                            Desarrollo Frontend:
+                            <strong>Perfeccionando el diseño y la estructura web con HTML5,
+                                CSS3 y la interactividad dinámica de JavaScript.</strong>
+                        </li>
+                        <li>
+                            Backend y Datos:
+                            <strong>Profundizando en la lógica de negocio con Java y el
+                                manejo eficiente de bases de datos mediante SQL.</strong>
+                        </li>
+                        <li>
+                            Low-Code & Innovación:
+                            <strong>Explorando el potencial de Appian para optimizar procesos
+                                empresariales de forma ágil.</strong>
+                        </li>
+                        <li>
+                            Colaboración:
+                            <strong>Integrando GitHub en mi flujo de trabajo diario para un
+                                control de versiones profesional y trabajo en equipo.</strong>
+                        </li>
+                    </ul>
+                    <p>
+                        Soy una persona curiosa, orientada a la resolución de problemas y
+                        con muchas ganas de aportar valor mientras aprendo de los mejores
+                        profesionales del sector.
+                        <strong>¡Ganas de código y de nuevos retos!</strong>
+                    </p>
+                    <figure class="quote_container">
+                        <div class="image__container">
+                            <img src="../src/img/coding.jpg" alt="Imágen con líneas de código" />
+                        </div>
+                        <figcaption>
+                            "La programación es una carrera entre los desarrolladores,
+                            intentando construir mayores y mejores programas a prueba de
+                            idiotas, y el universo, intentando producir mayores y mejores
+                            idiotas. Por ahora va ganando el Universo"
+                            <br />
+                            -- Rich Cook
+                        </figcaption>
+                    </figure>
+                </div>
+            </article>
+
+            <article class="main__article" id="learningBlocks">
+                <h2>Contenidos</h2>
+                <div class="main__article-content">
+                    <p>
+                        Dentro de los conocimientos que voy a adquirir durante mis
+                        prácticas en <strong>STEMDO</strong> se encuentran los siguientes
+                        contenidos:
+                    </p>
+
+                    <!-- Lenguajes de Marcas -->
+                    <div class="main__article-sub-section" id="markdownLanguages">
+                        <h3>Lenguajes de Marcas</h3>
+                        <p>
+                            Estructurar, estilizar y dar interactividad a mi página web de
+                            forma profesional usando las siguientes tecnologías.
+                        </p>
+                        <table id="markdownLanguageTable">
+                            <thead>
+                                <tr>
+                                    <th>Tecnología</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="https://es.wikipedia.org/wiki/HTML5" target="_blank">
+                                            <div class="image__container">
+                                                <img src="../src/img/HTML5_logo_and_wordmark.svg.png"
+                                                    alt="Imágen del logo de HTML5" class="tech-logo" />
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        Define una <strong>estructura básica</strong> para la
+                                        presentación de contenido de una
+                                        <strong>página web</strong>, incluyendo texto,
+                                        imágenes, vídeos…
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="https://es.wikipedia.org/wiki/CSS" target="_blank">
+                                            <div class="image__container">
+                                                <img src="../src/img/Official_CSS_Logo.svg.png"
+                                                    alt="Imágen del logo de CSS" class="tech-logo" />
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        Lenguaje informático para
+                                        <strong>definir y cohesionar</strong> la presentación
+                                        de un documento escrito en un
+                                        <strong>lenguaje de marcado</strong>.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="https://es.wikipedia.org/wiki/JavaScript" target="_blank">
+                                            <div class="image__container">
+                                                <img src="../src/img/Unofficial_JavaScript_logo_2.svg.png"
+                                                    alt="Imágen del logo de JavaScript" class="tech-logo" />
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        Lenguaje de programación
+                                        <strong>interpretado</strong>, del lado del
+                                        <strong>cliente</strong>, que permite crear
+                                        <strong>interfaces de usuario dinámicas</strong>.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Bases de Datos -->
+                    <div class="main__article-sub-section" id="databases">
+                        <h3>Bases de Datos</h3>
+                        <p>
+                            Aprenderé a usar <strong>SQL</strong> para diseñar,
+                            implementar y administrar información en sistemas
+                            relacionales, asegurando la
+                            <strong>integridad y eficiencia de los datos</strong>.
+                        </p>
+                        <div class="image__container" id="sqlLogo">
+                            <img src="../src/img/Sql_data_base_with_logo.svg.png" alt="Imágen del logo de SQL"
+                                class="tech-logo" />
+                        </div>
+                    </div>
+
+                    <!-- Programación -->
+                    <div class="main__article-sub-section" id="programming">
+                        <h3>Programación</h3>
+                        <p>
+                            Desarrollo de <strong>software modular, escalable y eficiente</strong>
+                            utilizando <strong>Java</strong>, uno de los lenguajes más
+                            potentes y demandados.
+                        </p>
+                        <div class="image_container" id="javaLogo">
+                            <img src="../src/img/Duke_(Java_mascot)_waving.svg.png" alt="Imágen de la mascota de Java"
+                                class="tech-logo" />
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="main__article" id="contact">
+                <h2>Contacto</h2>
+                <div class="main__article-content">
+                    <p>
+                        Si tienes algo que consultarme o alguna sugerencia para la
+                        formación, contáctame.
+                    </p>
+                    <form action="" id="contactForm" class="contact__form" name="contactForm">
+                        <fieldset>
+                            <legend><strong>Formulario de contacto</strong></legend>
+                            <div class="form__group">
+                                <label for="nameInput">Nombre:</label>
+                                <input id="nameInput" name="nameField" type="text"
+                                    placeholder="Introduzca aquí su nombre..." />
+                            </div>
+                            <div class="form__group">
+                                <label for="emailInput">Email:</label>
+                                <input id="emailInput" name="emailField" type="email"
+                                    placeholder="Introduzca aquí su email..." />
+                            </div>
+
+                            <div class="form__group">
+                                <label for="messageTypeSelector">
+                                    Tipo de consulta:
+                                </label>
+                                <div class="form__selector">
+                                    <select name="tipoConsulta" id="messageTypeSelector">
+                                        <option value="">-- Selecciona --</option>
+                                        <option value="consulta">Consulta</option>
+                                        <option value="sugerencia">Sugerencia</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="form__group">
+                                <label for="topic">Asunto:</label>
+                                <input id="topic" name="topicField" type="text"
+                                    placeholder="Introduzca aquí el asunto..." />
+                            </div>
+                            <div class="form__group">
+                                <label for="textboxForm">Mensaje:</label>
+                                <textarea name="message" id="textboxForm" rows="6"
+                                    placeholder="Escriba su mensaje..."></textarea>
+                            </div>
+                            <input type="submit" value="Enviar" id="submitButton" class="btn" />
+                        </fieldset>
+                    </form>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer__section">
+        <p>&copy; STEMDO | Diseñado por Daniel Muñoz Sigmund</p>
+    </footer>
+    <script src="../js/modules/main.js"></script>
+</body>
+
+</html>

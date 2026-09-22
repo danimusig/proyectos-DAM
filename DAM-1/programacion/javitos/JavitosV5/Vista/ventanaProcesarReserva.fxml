@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1050.0" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.VentanaProcesarReservaController">
+   <children>
+      <ComboBox fx:id="cmbClientesReserva" layoutX="121.0" layoutY="148.0" onAction="#seleccionarCliente" prefHeight="25.0" prefWidth="193.0" />
+      <ComboBox fx:id="cmbAlojamientosReservas" layoutX="428.0" layoutY="148.0" onAction="#seleccionarAlojamiento" prefHeight="25.0" prefWidth="193.0" />
+      <TextField fx:id="txfNombreCliente" layoutX="130.0" layoutY="214.0" />
+      <TextField fx:id="txfDniCliente" layoutX="129.0" layoutY="260.0" />
+      <TextField fx:id="txfEmailCliente" layoutX="130.0" layoutY="307.0" prefHeight="31.0" prefWidth="168.0" />
+      <TextField fx:id="txfVecesAlojado" layoutX="129.0" layoutY="399.0" />
+      <TextField fx:id="txfNombreAloja" layoutX="440.0" layoutY="214.0" />
+      <CheckBox fx:id="chkbChimenea" layoutX="424.0" layoutY="311.0" mnemonicParsing="false" text="Chimenea" />
+      <CheckBox fx:id="chkbJacuzzi" layoutX="562.0" layoutY="311.0" mnemonicParsing="false" text="Jacuzzi" />
+      <TextField fx:id="txfTarifaNoche" layoutX="441.0" layoutY="353.0" />
+      <TextField fx:id="txfVecesAlquilada" layoutX="441.0" layoutY="400.0" />
+      <DatePicker fx:id="dtpFechaEntrada" layoutX="777.0" layoutY="214.0" onAction="#calcularTotal" />
+      <DatePicker fx:id="dtpFechaSalida" layoutX="777.0" layoutY="260.0" onAction="#calcularTotal" />
+      <TextField fx:id="txfTotal" editable="false" layoutX="790.0" layoutY="412.0" />
+      <Button fx:id="btnVolver" layoutX="12.0" layoutY="553.0" mnemonicParsing="false" onAction="#volver" text="Volver" />
+      <Button fx:id="btnGuardarReserva" layoutX="769.0" layoutY="467.0" mnemonicParsing="false" onAction="#guardarReserva" text="Guardar" />
+      <Button fx:id="btnReiniciar" layoutX="893.0" layoutY="467.0" mnemonicParsing="false" onAction="#reiniciarCampos" text="Reiniciar" />
+      <ImageView fitHeight="95.0" fitWidth="587.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="52.0" layoutY="221.0" text="Nombre" />
+      <Label layoutX="64.0" layoutY="267.0" text="DNI" />
+      <Label layoutX="60.0" layoutY="312.0" text="Email" />
+      <Label layoutX="36.0" layoutY="404.0" text="Veces alojado" />
+      <Label layoutX="356.0" layoutY="221.0" text="Nombre" />
+      <Label layoutX="350.0" layoutY="269.0" text="Capacidad" />
+      <Label layoutX="349.0" layoutY="357.0" text="Tarifa(noche)" />
+      <Label layoutX="342.0" layoutY="404.0" text="Veces alquilada" />
+      <Label layoutX="659.0" layoutY="226.0" text="Fecha de entrada" />
+      <Label layoutX="665.0" layoutY="269.0" text="Fecha de salida" />
+      <Label layoutX="846.0" layoutY="391.0" text="TOTAL" />
+      <ComboBox fx:id="cmbLugarResidencia" layoutX="129.0" layoutY="353.0" prefHeight="35.0" prefWidth="168.0" />
+      <Label layoutX="45.0" layoutY="357.0" text="Residencia" />
+      <ComboBox fx:id="cmbCapacidad" layoutX="440.0" layoutY="260.0" prefHeight="35.0" prefWidth="168.0" />
+      <Label layoutX="181.0" layoutY="122.0" text="🚶‍♂️‍➡️Clientes" />
+      <Label layoutX="478.0" layoutY="122.0" text="🏠 Alojamientos" />
+   </children>
+</AnchorPane>
