@@ -18,10 +18,13 @@ table {
     padding: 8px;
 }
 
-th, td {
-    padding: 8px;
-    border: 1px solid black;
+th {
+    border-bottom: 1px solid black;
     border-collapse: collapse;
+}
+
+td {
+    padding: 8px;
 }
 
 button {
