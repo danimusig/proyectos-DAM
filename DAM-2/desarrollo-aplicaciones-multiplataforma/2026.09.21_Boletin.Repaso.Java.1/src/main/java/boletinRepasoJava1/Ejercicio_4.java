@@ -24,8 +24,10 @@ public class Ejercicio_4 {
         System.out.println("Introduzca un numero decimal para convertirlo a binario: ");
         int numIntroducido = sc.nextInt();
         numDecimal = numIntroducido;
-        // Iba a usar metodos de Java para convertir el numero y procesarlo pero en internet he visto
-        // que se podia resolver a pura matemática.
+
+        // Iba a usar metodos de Java para convertir el numero y procesarlo pero buscando los necesarios para la conversion
+        // internet he visto (y seguro que ya nos lo explicaste en clase)
+        // que se podia resolver a mates sin hacer conversiones de tipo usando métodos.
 
         if (numDecimal == 0) {
             numBinario.add(0);
