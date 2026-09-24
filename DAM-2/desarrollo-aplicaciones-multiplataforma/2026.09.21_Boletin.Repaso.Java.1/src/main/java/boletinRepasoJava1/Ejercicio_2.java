@@ -17,7 +17,6 @@ public class Ejercicio_2 {
         * intentos permitidos” y acaba el programa.
         * */
 
-
         Scanner sc = new Scanner(System.in);
 
         // Declaracion de variables inmutables.
@@ -30,8 +29,7 @@ public class Ejercicio_2 {
         int passwordIntroducida;
         boolean passwordCorrecta = false;
 
-
-        // Lógica principal
+        // Logica principal
         System.out.println("** ADIVINA LA CONTRASEÑA NUMERICA **");
 
         while (intentos > 0 && !passwordCorrecta) {
@@ -48,7 +46,6 @@ public class Ejercicio_2 {
                 System.out.println("Acceso autorizado.");
             }
         }
-
         sc.close();
     }
 }

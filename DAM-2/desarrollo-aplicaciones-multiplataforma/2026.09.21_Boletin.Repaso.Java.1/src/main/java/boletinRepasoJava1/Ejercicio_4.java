@@ -8,11 +8,11 @@ public class Ejercicio_4 {
     public static void main (String[] args) {
 
         /*
-        *  Implementa un programa que convierta un número decimal en su representación
-        *  binaria. Hay que tener en cuenta que desconocemos cuántas cifras tiene el número
-        *  que introduce el usuario. Recuerda que para pasar el número de decimal a binario se
-        *  realizan divisiones sucesivas entre 2 hasta que el cociente sea cero, y posteriormente
-        *  se cogen los restos de esas divisiones en orden inverso.
+        * Implementa un programa que convierta un número decimal en su representación
+        * binaria. Hay que tener en cuenta que desconocemos cuántas cifras tiene el número
+        * que introduce el usuario. Recuerda que para pasar el número de decimal a binario se
+        * realizan divisiones sucesivas entre 2 hasta que el cociente sea cero, y posteriormente
+        * se cogen los restos de esas divisiones en orden inverso.
         */
 
         Scanner sc = new Scanner(System.in);
@@ -44,7 +44,6 @@ public class Ejercicio_4 {
                 System.out.print(num);
             }
         }
-
-
+        sc.close();;
     }
 }

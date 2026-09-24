@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class Ejercicio_3 {
     public static void main (String[] args) {
 
-         /*
-         * Implementa una variante del programa anterior que, en cada intento que introduce
-         * el usuario, el programa indica si ha introducido un dígito correcto en el orden
-         * correcto, o, en su defecto, imprime un asterisco. El número secreto sigue siendo 353.
-         * */
+        /*
+        * Implementa una variante del programa anterior que, en cada intento que introduce
+        * el usuario, el programa indica si ha introducido un dígito correcto en el orden
+        * correcto, o, en su defecto, imprime un asterisco. El número secreto sigue siendo 353.
+        * */
 
         Scanner sc = new Scanner(System.in);
 
