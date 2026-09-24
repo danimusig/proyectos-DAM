@@ -2,7 +2,6 @@ package boletinRepasoJava1;
 
 import java.util.Scanner;
 
-
 public class Ejercicio_2 {
     public static void main(String[] args) {
 
@@ -29,11 +28,13 @@ public class Ejercicio_2 {
         // Declaracion de variables mutables.
         int intentos = 3;
         int passwordIntroducida;
+        boolean passwordCorrecta = false;
+
 
         // Lógica principal
         System.out.println("** ADIVINA LA CONTRASEÑA NUMERICA **");
 
-        while (intentos > 0 ) {
+        while (intentos > 0 && !passwordCorrecta) {
             System.out.println("Introduzca la posible contraseña: ");
             passwordIntroducida = sc.nextInt();
             intentos--;
@@ -43,8 +44,8 @@ public class Ejercicio_2 {
             }
 
             if (passwordIntroducida == KEY) {
+                passwordCorrecta = true;
                 System.out.println("Acceso autorizado.");
-                break;
             }
         }
 
