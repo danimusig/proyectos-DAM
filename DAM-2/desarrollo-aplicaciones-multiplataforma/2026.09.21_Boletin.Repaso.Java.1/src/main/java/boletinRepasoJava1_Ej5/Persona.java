@@ -13,43 +13,43 @@ public abstract class Persona {
     /**
      * El nombre de la persona.
      */
-    protected String nombre;
+    public String nombre;
 
     /**
      * El apellido de la persona.
      */
-    protected String apellido;
+    public String apellido;
 
     /**
      * El DNI de la persona.
      */
-    protected int numeroIdentidad;
+    public int numeroIdentidad;
 
     /**
      * La direccion de la persona.
      */
-    protected String direccion;
+    public String direccion;
 
     /**
      * El telefono de la persona.
      */
-    protected int telefono;
+    public int telefono;
 
     /**
      * El anio de nacimiento de la persona.
      */
-    protected Date anioNacimiento;
+    public Date anioNacimiento;
 
     /**
-     * Constructor Principal
-     * @param nombre
-     * @param apellido
-     * @param numeroIdentidad
-     * @param direccion
-     * @param telefono
-     * @param anioNacimiento
+     * Constructor Principal.
+     * @param nombre El nombre de la persona.
+     * @param apellido El apellido de la persona.
+     * @param numeroIdentidad El DNi de la persona.
+     * @param direccion La direccion de la persona.
+     * @param telefono El telefono de la persona.
+     * @param anioNacimiento El anio de nacimiento.
      */
-    protected Persona(String nombre, String apellido, int numeroIdentidad, String direccion, int telefono, Date anioNacimiento) {
+    public Persona(String nombre, String apellido, int numeroIdentidad, String direccion, int telefono, Date anioNacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.numeroIdentidad = numeroIdentidad;
@@ -59,44 +59,44 @@ public abstract class Persona {
     }
 
     /**
-     *
-     * @return
+     * Obtiene el nombre de la persona.
+     * @return El nombre de la persona.
      */
-    protected abstract String obtenerNombre();
+    public abstract String obtenerNombre();
 
     /**
-     *
-     * @return
+     * Obtiene el apellido de la persona.
+     * @return El apellido de la persona.
      */
-    protected abstract String obtenerApellido();
+    public abstract String obtenerApellido();
 
     /**
-     *
-     * @return
+     * Obtiene el nombre completo de la persona.
+     * @return El apellido de la persona.
      */
-    protected abstract String obtenerNombreCompleto();
+    public abstract String obtenerNombreCompleto();
 
     /**
-     *
-     * @return
+     * Obtiene el DNI de la persona.
+     * @return El DNI de la persona.
      */
-    protected abstract int obtenerDNI();
+    public abstract int obtenerDNI();
 
     /**
-     *
-     * @return
+     * Obtiene la direccion de la persona.
+     * @return La direccion de la persona.
      */
-    protected abstract String obtenerDireccion();
+    public abstract String obtenerDireccion();
 
     /**
-     *
-     * @return
+     * Obtiene el telefono de la persona.
+     * @return El telefono de la persona.
      */
-    protected abstract int obtenerTelefono();
+    public abstract int obtenerTelefono();
 
     /**
-     *
-     * @return
+     * Obtiene el anio de nacimiento.
+     * @return El anio de nacimiento.
      */
-    protected abstract Date obtenerAnioNacimiento();
+    public abstract Date obtenerAnioNacimiento();
 }

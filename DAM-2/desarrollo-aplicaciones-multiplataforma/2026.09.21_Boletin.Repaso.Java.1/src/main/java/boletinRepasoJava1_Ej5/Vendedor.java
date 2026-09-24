@@ -45,82 +45,89 @@ public class Vendedor extends Persona {
     }
 
     /**
-     *
-     * @return
+     * Obtiene el codigo del vendedor.
+     * @return El codigo del vendedor.
      */
     public int obtenerCodigoVendedor(){
         return this.codigoVendedor;
     }
 
     /**
-     *
-     * @return
+     * Obtiene el area de venta del vendedor.
+     * @return El area de venta del vendedor.
      */
-    public String areaVenta() {
+    public String obtenerAreaVenta() {
         return this.areaVenta;
     }
 
     /**
-     *
-     * @return
+     * Obtiene el total de ventas del vendedor.
+     * @return El total de ventas del vendedor.
      */
-    public int totalVentas() {
-        return this.totalVentas();
+    public int obtenerTotalVentas() {
+        return this.totalVentas;
     }
 
     /**
-     * @return
+     * Obtiene el nombre del vendedor.
+     * @return El nombre del vendedor.
      */
     @Override
-    protected String obtenerNombre() {
-        return "";
+    public String obtenerNombre() {
+        return this.nombre;
     }
 
     /**
-     * @return
+     * Obtiene el apellido del vendedor.
+     * @return El apellido del vendedor.
      */
     @Override
-    protected String obtenerApellido() {
-        return "";
+    public String obtenerApellido() {
+        return this.apellido;
     }
 
     /**
-     * @return
+     * Obtiene el nombre completo del vendedor.
+     * @return El nombre completo del vendedor.
      */
     @Override
-    protected String obtenerNombreCompleto() {
-        return "";
+    public String obtenerNombreCompleto() {
+        return this.nombre + this.apellido;
     }
 
     /**
-     * @return
+     * Obtiene el DNI del vendedor.
+     * @return El DNI del vendedor.
      */
     @Override
-    protected int obtenerDNI() {
+    public int obtenerDNI() {
         return 0;
     }
 
     /**
-     * @return
+     * Obtiene la direccion del vendedor.
+     * @return La direccion del vendedor.
      */
     @Override
-    protected String obtenerDireccion() {
+    public String obtenerDireccion() {
         return "";
     }
 
     /**
-     * @return
+     * Obtiene el telefono del vendedor.
+     * @return El telefono del vendedor.
      */
     @Override
-    protected int obtenerTelefono() {
+    public int obtenerTelefono() {
         return 0;
     }
 
     /**
-     * @return
+     * Obtiene el anio de nacimiento.
+     * @return El anio de nacimiento.
      */
     @Override
-    protected Date obtenerAnioNacimiento() {
+    public Date obtenerAnioNacimiento() {
         return null;
     }
 }

@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * Clase que contiene los datos y acciones referentes a un libro.
- * @author danielss
+ * @author danielms
  * @version 1.0
  * @see Date
  */

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Clase que contiene los datos y accciones  básicas referentes a una biblioteca.
+ * Clase que contiene los datos y acciones básicas referentes a una biblioteca.
  * @author danielms
  * @version 1.0
  * @see ArrayList
@@ -15,6 +15,7 @@ import java.util.Set;
  * @see Set
  */
 public class Biblioteca {
+
     /**
      * El nombre de la biblioteca.
      */
@@ -43,13 +44,12 @@ public class Biblioteca {
     /**
      * Los clientes de la biblioteca.
      */
-    public List<Cliente> clientes = new ArrayList<>();
+    private List<Cliente> clientes = new ArrayList<>();
 
     /**
      * Los vendedores de la biblioteca.
      */
-    public List<Vendedor> vendedores = new ArrayList<>();
-
+    private List<Vendedor> vendedores = new ArrayList<>();
 
     /**
      * Constructor Principal.
