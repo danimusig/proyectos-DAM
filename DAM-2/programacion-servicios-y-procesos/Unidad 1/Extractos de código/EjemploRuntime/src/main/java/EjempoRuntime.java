@@ -4,13 +4,13 @@ public class EjempoRuntime {
     public static void main(String[] args) {
         try {
             // Ejemplo 1: Ejecutar sin parámetros
-            Runtime.getRuntime().exec("Notepad.exe");
+            Runtime.getRuntime().exec("gnome-text-editor");
 
             // Ejemplo 2: Ejecutar pasando un archivo como argumento
-            Runtime.getRuntime().exec("Notepad.exe notas.txt");
+            Runtime.getRuntime().exec("gnome-text-editor notas.txt");
 
             // Ejemplo 3: Usando un array de Strings
-            String[] infoProceso = {"Notepad.exe", "notas.txt"};
+            String[] infoProceso = {"gnome-text-editor", "notas.txt"};
             Process proceso = Runtime.getRuntime().exec(infoProceso);
 
             // Esperar a que el proceso termine y obtener el código de salida
