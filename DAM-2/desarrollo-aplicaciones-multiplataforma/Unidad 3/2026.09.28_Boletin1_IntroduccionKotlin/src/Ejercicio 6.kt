@@ -1,7 +1,7 @@
 fun main() {
 
-    var numMayor = Int.MAX_VALUE
-    var numMenor = Int.MIN_VALUE
+    var numMayor = Int.MIN_VALUE
+    var numMenor = Int.MAX_VALUE
 
     println("Introduzca 10 numeros uno a uno: ")
 
@@ -10,9 +10,8 @@ fun main() {
         val num = readln().toInt()
         acumulador+=num
 
-        if (num > numMenor) numMenor = num
-
-        if (num < numMayor) numMayor = num
+        if (num > numMayor) numMayor = num
+        if (num < numMenor) numMenor = num
     }
 
     val media = acumulador / 10

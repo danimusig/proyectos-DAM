@@ -1,12 +1,12 @@
 fun main() {
-    var nota1 = 6
-    var nota2 = 7
-    var nota3 = 9
-    var nota4 = 10
-    var nota5 = 8
+    val nota1 = 6.8f
+    val nota2 = 7.2f
+    val nota3 = 9.7f
+    val nota4 = 10.5f
+    val nota5 = 8.1f
 
-    val acumuladorNotas: Int = nota1 + nota2 + nota3 + nota4 + nota5
-    val notaMedia = acumuladorNotas / 5
+    val acumuladorNotas = nota1 + nota2 + nota3 + nota4 + nota5
+    val notaMedia = acumuladorNotas / 5.0f
 
     println("La media de tus notas es: $notaMedia")
 }

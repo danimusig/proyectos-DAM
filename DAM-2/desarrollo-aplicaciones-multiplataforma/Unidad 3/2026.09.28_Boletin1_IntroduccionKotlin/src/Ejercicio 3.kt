@@ -6,8 +6,8 @@ fun main() {
         println("Introduzca los numeros de uno en uno")
         val num = readln().toDouble()
 
-        acumuladorSuma += num;
-        acumuladorMulti *= num;
+        acumuladorSuma += num
+        acumuladorMulti *= num
     }
 
     println("Suma de todos los números $acumuladorSuma")

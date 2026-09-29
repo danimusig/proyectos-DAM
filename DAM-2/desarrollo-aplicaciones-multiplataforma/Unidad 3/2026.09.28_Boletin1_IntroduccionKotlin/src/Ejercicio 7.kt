@@ -4,8 +4,8 @@ fun main() {
 
     when (nota) {
         in 0..4 -> println("Suspenso")
-        5 -> println("Aprovado")
-        6 -> print("Bien")
+        5 -> println("Aprobado")
+        6 -> println("Bien")
         in 7..8 -> println("Notable")
         in 9..10 -> println("Sobresaliente")
     }

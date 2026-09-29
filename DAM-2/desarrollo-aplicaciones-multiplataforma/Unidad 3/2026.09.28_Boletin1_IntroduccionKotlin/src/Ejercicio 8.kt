@@ -3,7 +3,10 @@ fun main() {
     print("Calcular hasta el numero: ")
     var numLimite = readln().toInt()
 
-    for (i in 1..numLimite)
-        if (i % 3 == 0) print("$i ")
+    var contadorMultiplo = 0;
+    for (i in 1..numLimite) {
+        if (i % 3 == 0) contadorMultiplo++
+    }
+    println("$numLimite tiene $contadorMultiplo multiplos de 3.")
 
 }

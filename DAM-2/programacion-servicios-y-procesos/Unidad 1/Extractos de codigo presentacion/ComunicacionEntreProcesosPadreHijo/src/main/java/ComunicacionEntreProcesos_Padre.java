@@ -9,7 +9,7 @@ public class ComunicacionEntreProcesos_Padre {
     public static void main(String[] args) {
         try {
             // 1. Crear y lanzar el proceso hijo ejecutable .jar
-            ProcessBuilder proBuil = new ProcessBuilder("java", "/home/danielms/Proyects/DAM-2/programacion-servicios-y-procesos/Unidad 1/Extractos de codigo presentacion/ComunicacionEntreProcesosPadreHijo/src/main/java/ComunicacionEntreProcesos_Hijo.java");
+            ProcessBuilder proBuil = new ProcessBuilder("java", "");
             Process procesoHijo = proBuil.start();
 
             // 2. Canal para leer del teclado
