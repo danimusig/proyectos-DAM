@@ -1,28 +1,17 @@
 fun main() {
     val numArray = IntArray(10)
     inicilaizarArray(numArray)
-    println("Resultado ${calculaSuma(numArray)}")
+    println("Suma de los elementos del array:  ${calculaSuma(numArray)}")
 }
 
-fun inicilaizarArray(numArray: IntArray): IntArray {
+fun inicilaizarArray(numArray: IntArray) {
     for (i in numArray.indices) {
-        val randomNumber = (0..10).shuffled().first()
-        numArray[i] =  randomNumber;
+        val randomNumber = (1..10).random()
+        numArray[i] =  randomNumber
     }
-
-    return numArray
 }
 
-
+// Con el metodo .sum() se suman todos los numeros de un array de numeros.
 fun calculaSuma(numArray: IntArray): Int {
-    var resultado = 0
-    if (numArray.isEmpty()) {
-        print("No hay valores que sumar.")
-    } else {
-        for (i in numArray.indices) {
-            resultado+=numArray[i]
-        }
-    }
-    return resultado;
-
+    return numArray.sum()
 }

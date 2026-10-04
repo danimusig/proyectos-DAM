@@ -7,9 +7,8 @@ fun main() {
         numeros[i] = readln().toInt()
     }
 
-    numeros.reverse()
-
-    for (i in numeros.indices) {
+    // El metodo reversed() no altera el orden del array original al contrario de reverse()
+    for (i in numeros.indices.reversed()) {
         print("${numeros[i]} ")
     }
 }
