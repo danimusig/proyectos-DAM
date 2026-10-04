@@ -24,5 +24,4 @@ fun main() {
         for (i in socios.indices) {
             println("Datos del socio: \n${socios[i]}") // En kotlin no hace falta llamar tostring en una plantilla
         }
-
 }
