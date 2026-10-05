@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::root {
+    --text-color: #000;
+    --table-bg-color: #ffffff;
+    --table-border-color: ;
+    --table-hightlight-color: ;
+    --link-hover-color: ;
+
+}
+
+@media (min-width: 768px) {
+    .articles__grid {
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-areas:
+            "cover__container album__info";
+    }
+
+    #cover__container {
+        grid-area: cover__container;
+    }
+
+    #album__info {
+        grid-area: album__info;
+    }
+
+    .main__nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+}

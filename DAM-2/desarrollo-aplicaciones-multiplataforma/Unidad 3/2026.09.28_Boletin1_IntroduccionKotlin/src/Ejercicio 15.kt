@@ -3,5 +3,5 @@ fun main() {
 }
 
 fun suma(num1:Int, num2:Int, num3: Int, num4: Int = 0, num5: Int = 0): Int {
-    return num1+num2+num3+num4+num5
+    return num1 + num2 + num3 + num4 + num5
 }
