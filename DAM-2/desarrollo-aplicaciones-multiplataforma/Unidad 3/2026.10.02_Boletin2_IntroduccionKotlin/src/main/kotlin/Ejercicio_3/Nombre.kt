@@ -20,5 +20,4 @@ class Nombre (nombre: String, apellido: String) {
     override fun toString(): String {
         return "$nombre $apellido"
     }
-
 }

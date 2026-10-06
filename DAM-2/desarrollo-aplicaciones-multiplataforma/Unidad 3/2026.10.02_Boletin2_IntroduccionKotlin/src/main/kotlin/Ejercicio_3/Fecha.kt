@@ -27,5 +27,4 @@ class Fecha (diaFecha: Int, mesFecha: Int, anyoFecha: Int) {
     override fun toString(): String {
         return "$dia/$mes/$any"
     }
-
 }
