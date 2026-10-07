@@ -1,11 +1,9 @@
 package Ejercicio2
 
-class Loteria(var numeroPremiado: Int) {
-    constructor() : this()
+class Loteria(var numeroPremiado: Int = 0) {
 
-    fun sortearLoteria(): Int {
+    fun sortearLoteria() {
             numeroPremiado = (1..99999).random()
-        return numeroPremiado
     }
 
     fun imprimirNumeroPremiado() {
