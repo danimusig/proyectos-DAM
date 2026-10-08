@@ -15,6 +15,81 @@
 
 }
 
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: lemonchiffon;
+    text-align: center;
+}
+
+#cover__container {
+    display: inline-block; 
+    text-align: center;
+    height: 250px;
+    width: 250px;
+    border: 3px solid black;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    padding-top: 40px;
+    background-color: #6c1616;
+}
+
+#cover_band__name {
+    color: #ffffff;
+    text-align: left;
+    padding-left: 55px;
+    margin-bottom: 10px;
+}
+
+#cover_album__name {
+    color: #000;
+    margin-top: 10px;
+}
+
+#cover_band__name, #cover_album__name {
+    font-family: "cooper-black-std", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+#album__info {
+    border: 3px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    box-shadow: 0 0 0 2px, rgba(53, 53, 224, 0.2);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+thead {
+    background-color: red;
+}
+
+thead #num {
+    width: 15%;
+}
+
+thead #nombre {
+    width: 60%;
+}
+
+thead #duracion {
+    width: 25%;
+}
+
+#descripcion {
+    margin-bottom: 10px;
+}
+
+#descriocion p {
+    max-width: 61ch;
+}
+
+.table_highlight {
+    background-color: rgb(247, 113, 40);
+}
+
 @media (min-width: 768px) {
     .articles__grid {
         grid-template-columns: 1fr 1fr;
