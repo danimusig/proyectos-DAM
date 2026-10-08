@@ -1,68 +1,99 @@
-*,
-*::before,
-*::after {
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-::root {
+:root {
     --text-color: #000;
     --table-bg-color: #ffffff;
-    --table-border-color: ;
-    --table-hightlight-color: ;
-    --link-hover-color: ;
+    --table-border-color: #000;
+    --table-hightlight-color: #ffd752;
 }
 
 body {
+    background-color: #fff6c2;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    background-color: lemonchiffon;
-    text-align: center;
+    gap: 20px;
+    min-height: 100vh;
+
 }
 
-#cover__container {
-    display: inline-block; 
+header {
+    background-color: #6c1616;
     text-align: center;
+    padding: 10px;
+}
+
+main {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    font-family: "Libre Baskerville", serif;
+
+}
+
+#album__cover {
     height: 250px;
     width: 250px;
-    border: 3px solid black;
-    border-radius: 12px;
-    margin-bottom: 10px;
-    padding-top: 40px;
-    background-color: #6c1616;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
-#cover_band__name {
-    color: #ffffff;
+#band_name {
+    color: #fff;
     text-align: left;
-    padding-left: 55px;
-    margin-bottom: 10px;
 }
 
-#cover_album__name {
-    color: #000;
-    margin-top: 10px;
+#album_image {
+    border-radius: 10px;
+    height: inherit;
+    width: inherit;
+    object-fit: contain;
+    transition: transform 300ms ease;
 }
 
-#cover_band__name, #cover_album__name {
+#album_image:hover {
+    transform: scale(1.1);
+}
+
+#band_name, #album_name {
     font-family: "cooper-black-std", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 #album__info {
-    border: 3px solid black;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 3px solid var(--table-border-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: min(100%, 520px);
     text-align: center;
-    box-shadow: 0 0 0 2px, rgba(53, 53, 224, 0.2);
-    margin-bottom: 20px;
-    text-align: center;
+    background-color: var(--table-bg-color);
+}
+
+#album__info th,
+#album__info td {
+    padding: 10px 8px;
 }
 
 thead {
-    background-color: red;
+    height: 40px;
+    background-color: #6c1616;
+    font-size: 1.1rem;
+    color: #fff;
 }
 
 thead #num {
@@ -78,36 +109,71 @@ thead #duracion {
 }
 
 #descripcion {
+    max-width: 520px;
+    width: 100%;
     margin-bottom: 10px;
 }
 
-#descriocion p {
+#descripcion p {
     max-width: 61ch;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
 }
 
 .table_highlight {
-    background-color: rgb(247, 113, 40);
+    background-color: var(--table-hightlight-color);
 }
 
-@media (min-width: 768px) {
-    .articles__grid {
-        grid-template-columns: 1fr 1fr;
+#album__info tbody tr.is-selected {
+    background-color: #6c1616;
+    color: #fff;
+}
 
-        grid-template-areas:
-            "cover__container album__info";
+#album__info tbody tr.is-selected a {
+    color: inherit;
+}
+
+.album_link {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 6px;
+    background-color: #6c1616;
+    color: #fff;
+    text-align: center;
+}
+
+.album_link:hover,
+.album_link:focus-visible {
+    background-color: #842330;
+}
+
+footer {
+    color: #fff;
+    background-color: #6c1616;
+    text-align: center;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.4rem;
     }
 
-    #cover__container {
-        grid-area: cover__container;
+    #album__cover {
+        width: min(250px, 80vw);
+        height: min(250px, 80vw);
     }
 
     #album__info {
-        grid-area: album__info;
+        font-size: 0.9rem;
     }
 
-    .main__nav {
-        position: sticky;
-        top: 0;
-        z-index: 10;
+    #album__info th,
+    #album__info td {
+        padding: 8px 5px;
     }
 }
