@@ -21,9 +21,14 @@ body {
 }
 
 header {
-    background-color: #6c1616;
+    background-color: #800028;
     text-align: center;
     padding: 10px;
+    font-family: "cooper-black-std";
+}
+
+h1 > span {
+    color: #fff;
 }
 
 main {
@@ -48,11 +53,6 @@ main {
     margin: auto;
 }
 
-#band_name {
-    color: #fff;
-    text-align: left;
-}
-
 #album_image {
     border-radius: 10px;
     height: inherit;
@@ -63,13 +63,6 @@ main {
 
 #album_image:hover {
     transform: scale(1.1);
-}
-
-#band_name, #album_name {
-    font-family: "cooper-black-std", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 22px;
 }
 
 #album__info {
@@ -91,7 +84,7 @@ main {
 
 thead {
     height: 40px;
-    background-color: #6c1616;
+    background-color: #800028;
     font-size: 1.1rem;
     color: #fff;
 }
@@ -129,7 +122,7 @@ a {
 }
 
 #album__info tbody tr.is-selected {
-    background-color: #6c1616;
+    background-color: #800028;
     color: #fff;
 }
 
@@ -141,19 +134,19 @@ a {
     display: inline-block;
     padding: 10px 16px;
     border-radius: 6px;
-    background-color: #6c1616;
+    background-color: #800028;
     color: #fff;
     text-align: center;
 }
 
 .album_link:hover,
 .album_link:focus-visible {
-    background-color: #842330;
+    background-color: #800028;
 }
 
 footer {
     color: #fff;
-    background-color: #6c1616;
+    background-color: #800028;
     text-align: center;
     padding: 10px;
 }
