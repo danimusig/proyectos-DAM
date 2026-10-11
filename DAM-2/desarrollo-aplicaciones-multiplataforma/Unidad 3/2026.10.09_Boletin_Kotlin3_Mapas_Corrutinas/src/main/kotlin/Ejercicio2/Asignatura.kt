@@ -1,5 +1,9 @@
 package Ejercicio2
 
-class Asignatura (var nombre: String, var calificacion: Int) {
+class Asignatura (var nombre: AsignaturasDAM, var calificacion: Int) {
+
+    override fun toString(): String {
+        return "$nombre : $calificacion"
+    }
 
 }
