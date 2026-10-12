@@ -6,11 +6,11 @@ fun main() {
     val alumno1 = Alumno(
         "Daniel",
         26,
-        asignaturasMatriculadas = MutableList<Asignatura>(5
+        asignaturasMatriculadas = MutableList<Asignatura>(
+            5
         ) {
             Asignatura(
-                asignaturasAlumno1.next()
-                ,
+                asignaturasAlumno1.next(),
                 (1..10).random()
             )
         }
@@ -19,11 +19,11 @@ fun main() {
     val alumno2 = Alumno(
         "Mario",
         28,
-        asignaturasMatriculadas = MutableList<Asignatura>(4
+        asignaturasMatriculadas = MutableList<Asignatura>(
+            4
         ) {
             Asignatura(
-                asignaturasAlumno2.next()
-                ,
+                asignaturasAlumno2.next(),
                 (1..10).random()
             )
         }
@@ -32,38 +32,28 @@ fun main() {
     val alumno3 = Alumno(
         "Francisco",
         19,
-        asignaturasMatriculadas = MutableList<Asignatura>(2
+        asignaturasMatriculadas = MutableList<Asignatura>(
+            2
         ) {
             Asignatura(
-                asignaturasAlumno3.next()
-                ,
+                asignaturasAlumno3.next(),
                 (1..10).random()
             )
         }
     )
 
-
     var alumnos = listOf<Alumno>(alumno1, alumno2, alumno3)
-    // Creo una lsita que almacena cada asignatura y las notas.
-    val notasPorAsignatura = mutableMapOf<AsignaturasDAM, MutableList<Int>>()
-
+    println("\n/// Media total del alumno  ///")
     alumnos.forEach { alumno ->
-        var notasAcumuladas: Int = 0
-        for (asignatura in alumno.asignaturasMatriculadas) {
-            notasAcumuladas += asignatura.calificacion
-
-            notasPorAsignatura
-                .getOrPut(asignatura.nombre) {mutableListOf()}
-                .add(asignatura.calificacion)
-        }
-
-        val notaMedia = notasAcumuladas / alumno.asignaturasMatriculadas.size
-
-        println("La nota media del alumno ${alumno.nombre} es: $notaMedia ")
+        val media = alumno.asignaturasMatriculadas.map { it.calificacion }.average()
+        println("La nota media del alumno ${alumno.nombre} es: $media")
     }
 
-    notasPorAsignatura.forEach { asignatura, calificaciones ->
-        println("Media en $asignatura: ${calificaciones.average().toInt()}")
+    val mediaPorModulo = alumnos
+            .flatMap { it.asignaturasMatriculadas }
+            .groupBy ({ it.nombre }, {it.calificacion})
 
+    mediaPorModulo.forEach { (asignatura, notas) ->
+        println("Media total de $asignatura: %.2f".format(notas.average()))
     }
 }
