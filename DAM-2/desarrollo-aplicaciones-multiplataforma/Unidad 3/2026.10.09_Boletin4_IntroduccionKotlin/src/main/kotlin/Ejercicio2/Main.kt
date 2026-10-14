@@ -50,8 +50,8 @@ fun main() {
     }
 
     val mediaPorModulo = alumnos
-            .flatMap { it.asignaturasMatriculadas }
-            .groupBy ({ it.nombre }, {it.calificacion})
+        .flatMap { it.asignaturasMatriculadas }
+        .groupBy ({ it.nombre }, {it.calificacion})
 
     mediaPorModulo.forEach { (asignatura, notas) ->
         println("Media total de $asignatura: %.2f".format(notas.average()))

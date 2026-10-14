@@ -41,6 +41,17 @@ body{
       outline:none;
       border:1px dotted black;
   }
+
+  .input-valido {
+    border: 2px solid #2ecc71;
+    outline: none;
+  }
+
+  .input-invalido {
+    border: 2px solid #e74c3c;
+    outline: none;
+  }
+
   .listaCargar{
       font-size:1.2em;
   }
@@ -72,6 +83,10 @@ body{
   }
   button:hover{
       background-color:royalblue;
+  }
+
+  button:disabled{
+        background-color: grey;
   }
   section{
       display:flex;

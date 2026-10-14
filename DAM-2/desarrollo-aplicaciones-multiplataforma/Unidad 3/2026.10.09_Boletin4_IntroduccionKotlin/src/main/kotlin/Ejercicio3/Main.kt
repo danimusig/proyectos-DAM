@@ -1,4 +1,4 @@
-package `Ejercicio 3`
+package Ejercicio3
 
 fun main() {
     val v1 = Vehiculo(

@@ -1,4 +1,4 @@
-package `Ejercicio 3`
+package Ejercicio3
 
 class Vehiculo (matriculaVehiculo: String, fabricanteVehiculo: String, modeloVehiculo: String): Comparable<Vehiculo> {
 
