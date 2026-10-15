@@ -6,7 +6,7 @@ import java.util.Properties;
 public class PropertieDAOxml implements PropertieDAO {
     @Override
     public Properties load() {
-        try (BufferedReader br = new BufferedReader(new FileReader("conf.json"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("conf.properties"))) {
 
         } catch (IOException e) {
 

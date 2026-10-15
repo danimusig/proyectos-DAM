@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CopyOnWriteArraySet;
+
+public class LectorEscritorNoSeguro extends Thread {
+    //private static List<String> palabras = new ArrayList<String>();
+    private static List<String> palabras = new CopyOnWriteArrayList<String>();
+
+    @Override
+    public void run() {
+        palabras.add(new String("Nueva palabra."));
+        for(String palabra : palabras) {
+            palabras.size();
+        }
+        System.out.println(palabras.size());
+    }
+
+    public static void main(String[] args) {
+        for (int i=0;i<100;i++) {
+            new LectorEscritorNoSeguro().start();
+        }
+    }
+}

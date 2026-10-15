@@ -1,3 +1,4 @@
+// Obtencion de elementos de la pagina
 const tituloInsertar = document.getElementById("titulo");
 const productoInsertar = document.getElementById("producto");
 
@@ -8,6 +9,9 @@ const productoEditar = document.getElementById("productoEditar");
 
 const botonEditar = document.querySelector(".btEditar");
 
+
+//Valido los datos campos y botones individualmente ya que no sé que vamos a querer hacer en el futuro y asi está mas encapsulado creo yo
+// Funcion para cambiar el css del borde del input dependiendo si es valido o no.
 function validarInput(input) {
     const texto = input.value.trim();
     
@@ -22,21 +26,23 @@ function validarInput(input) {
     }
 }
 
+// Desactiva los botones dependiendo si es valido o no.
 function comprobarFormularioInsertar() {
-    const esTituloOk = tituloInsertar.value.trim() !== "";
-    const esProductoOk = productoInsertar.value.trim() !== "";
+    const tituloEsValido = tituloInsertar.value.trim() !== "";
+    const productoEsvalido = productoInsertar.value.trim() !== "";
 
-    // Si ambos son válidos, habilitamos el botón; si no, lo deshabilitamos
-    botonInsertar.disabled = !(esTituloOk && esProductoOk);
+    botonInsertar.disabled = !(tituloEsValido && productoEsvalido);
 }
 
 function comprobarFormularioEditar() {
-    const esTituloOk = tituloEditar.value.trim() !== "";
-    const esProductoOk = productoEditar.value.trim() !== "";
+    const tituloEsValido = tituloEditar.value.trim() !== "";
+    const productoEsvalido = productoEditar.value.trim() !== "";
 
-    botonEditar.disabled = !(esTituloOk && esProductoOk);
+    botonEditar.disabled = !(tituloEsValido && productoEsvalido);
 }
 
+
+// Cada input es verificado (posteriormente puedo cambiar que se verifica por cada input)
 tituloInsertar.addEventListener("input", () => {
     validarInput(tituloInsertar);
     comprobarFormularioInsertar();
@@ -57,8 +63,10 @@ productoEditar.addEventListener("input", () => {
     comprobarFormularioEditar();
 });
 
+
+
 // Valida los datos al pulsar el boton de insertar.
-function validarInsertar() {
+function validarBotonInsertar() {
     const valorTitulo = tituloInsertar.value.trim();
     const valorProducto = productoInsertar.value.trim();
 
@@ -74,7 +82,7 @@ function validarInsertar() {
 }
 
 // Valida los datos al pulsar el boton de editar.
-function validarEditar() {
+function validarBotonEditar() {
     const valorTitulo = tituloEditar.value.trim();
     const valorProducto = productoEditar.value.trim();
 
@@ -89,5 +97,5 @@ function validarEditar() {
     }
 }
 
-botonInsertar.addEventListener("click", (validarInsertar));
-botonEditar.addEventListener("click", (validarEditar));
+botonInsertar.addEventListener("click", (validarBotonInsertar));
+botonEditar.addEventListener("click", (validarBotonEditar));
