@@ -15,7 +15,7 @@ const botonEditar = document.querySelector(".btEditar");
 function validarInput(input) {
     const texto = input.value.trim();
     
-    if (texto === "") {
+    if (texto === "" || texto.length > 50) {
         input.classList.remove("input-valido");
         input.classList.add("input-invalido")
         return false;
@@ -28,15 +28,15 @@ function validarInput(input) {
 
 // Desactiva los botones dependiendo si es valido o no.
 function comprobarFormularioInsertar() {
-    const tituloEsValido = tituloInsertar.value.trim() !== "";
-    const productoEsvalido = productoInsertar.value.trim() !== "";
+    const tituloEsValido = tituloInsertar.value.trim() !== "" || tituloInsertar.trim.length > 50;
+    const productoEsvalido = productoInsertar.value.trim() !== "" || productoInsertar.trim.length > 50;
 
     botonInsertar.disabled = !(tituloEsValido && productoEsvalido);
 }
 
 function comprobarFormularioEditar() {
-    const tituloEsValido = tituloEditar.value.trim() !== "";
-    const productoEsvalido = productoEditar.value.trim() !== "";
+    const tituloEsValido = tituloEditar.value.trim() !== "" || tituloEditar.trim.length > 50;
+    const productoEsvalido = productoEditar.value.trim() !== "" || productoEditar.trim.length > 50;
 
     botonEditar.disabled = !(tituloEsValido && productoEsvalido);
 }
