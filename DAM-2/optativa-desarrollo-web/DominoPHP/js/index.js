@@ -10,7 +10,7 @@ const botonEditar = document.querySelector(".btEditar");
 
 function validarInput(input) {
     const texto = input.value.trim();
-
+    
     if (texto === "") {
         input.classList.remove("input-valido");
         input.classList.add("input-invalido")
@@ -64,8 +64,10 @@ function validarInsertar() {
 
     if (valorTitulo === "" || valorProducto === "") {
         alert(" ERROR: Tiene que rellenar todos los campos antes de insertar.");
-    } else if (valorTitulo.length >  50) {
+        comprobarFormularioInsertar();
+    } else if (valorTitulo.length >  50 || valorProducto.length > 50) {
         alert(" ERROR: El producto tiene que ser de 50 caracteres o menos.");
+        comprobarFormularioInsertar();
     } else {
         alert(" Datos validados correctamente.");
     }
@@ -78,8 +80,10 @@ function validarEditar() {
 
     if (valorTitulo === "" || valorProducto === "") {
         alert(" ERROR: Tiene que rellenar todos los campos antes de insertar.");
-    } else if (valorTitulo.length >  50) {
+        comprobarFormularioEditar();
+    } else if (valorTitulo.length >  50 || valorProducto.length > 50) {
         alert(" ERROR: El producto tiene que ser de 50 caracteres o menos.");
+        comprobarFormularioEditar();
     } else {
         alert(" Datos validados correctamente.");
     }
@@ -87,6 +91,3 @@ function validarEditar() {
 
 botonInsertar.addEventListener("click", (validarInsertar));
 botonEditar.addEventListener("click", (validarEditar));
-
-comprobarFormularioInsertar();
-comprobarFormularioEditar();
