@@ -26,7 +26,7 @@ public class ProcessBuilderLibreofficeTypeConverter {
             procesoEnEjecucion.waitFor();
             // Validacion básica en un futuro se podría avisar de cual fue el error basándose en el exit value.
             if (procesoEnEjecucion.exitValue() != 0) {
-                System.err.println("Error: No se pudo exportar el archivo.");
+                System.err.println("Error: No se pudo exportar el archivo a PDF.");
             } else {
                 System.out.println("La conversion fue realizada satisfactoriamente.");
             }
@@ -50,7 +50,7 @@ public class ProcessBuilderLibreofficeTypeConverter {
             procesoEnEjecucion.waitFor();
 
             if (procesoEnEjecucion.exitValue() != 0) {
-                System.err.println("Error: No se pudo exportar el archivo.");
+                System.err.println("Error: No se pudo exportar el archivo a JPEG.");
             } else {
                 System.out.println("La conversion fue realizada satisfactoriamente.");
             }
@@ -74,7 +74,7 @@ public class ProcessBuilderLibreofficeTypeConverter {
             procesoEnEjecucion.waitFor();
 
             if (procesoEnEjecucion.exitValue() != 0) {
-                System.err.println("Error: No se pudo exportar el archivo.");
+                System.err.println("Error: No se pudo exportar el archivo a HTML.");
             } else {
                 System.out.println("La conversion fue realizada satisfactoriamente.");
             }
