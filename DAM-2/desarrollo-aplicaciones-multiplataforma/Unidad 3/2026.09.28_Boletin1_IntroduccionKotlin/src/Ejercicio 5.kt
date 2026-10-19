@@ -9,11 +9,10 @@ fun main() {
         var cociente = num
         var numDigitos = 1
         while (cociente / 10 != 0) {
-            cociente/=10
+            cociente /= 10
             numDigitos++
         }
-        println("$num contiene $numDigitos digitos." );
-
+        println("$num contiene $numDigitos digitos.");
     }
 }
 

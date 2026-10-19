@@ -15,6 +15,7 @@ fun main() {
             )
         }
     )
+
     var asignaturasAlumno2 = AsignaturasDAM.entries.shuffled().iterator()
     val alumno2 = Alumno(
         "Mario",
@@ -28,6 +29,7 @@ fun main() {
             )
         }
     )
+
     var asignaturasAlumno3 = AsignaturasDAM.entries.shuffled().iterator()
     val alumno3 = Alumno(
         "Francisco",
