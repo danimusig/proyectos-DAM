@@ -35,6 +35,54 @@ public class ProcessBuilderLibreofficeTypeConverter {
         }
     }
 
+    public static void convertirJPEG(String archivo) {
+        try {
+            String[] comandoConvertirJPEG = new String[5];
+            comandoConvertirJPEG[0] = "libreoffice";
+            comandoConvertirJPEG[1] = "--headless";
+            comandoConvertirJPEG[2] = "--convert-to";
+            comandoConvertirJPEG[3] = "jpeg";
+            comandoConvertirJPEG[4] = archivo;
+
+            ProcessBuilder procesoCreado = new ProcessBuilder(comandoConvertirJPEG);
+            Process procesoEnEjecucion = procesoCreado.start();
+
+            procesoEnEjecucion.waitFor();
+
+            if (procesoEnEjecucion.exitValue() != 0) {
+                System.err.println("Error: No se pudo exportar el archivo.");
+            } else {
+                System.out.println("La conversion fue realizada satisfactoriamente.");
+            }
+        } catch (IOException | InterruptedException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+    public static void convertirHTML(String archivo) {
+        try {
+            String[] comandoConvertirHTML = new String[5];
+            comandoConvertirHTML[0] = "libreoffice";
+            comandoConvertirHTML[1] = "--headless";
+            comandoConvertirHTML[2] = "--convert-to";
+            comandoConvertirHTML[3] = "html";
+            comandoConvertirHTML[4] = archivo;
+
+            ProcessBuilder procesoCreado = new ProcessBuilder(comandoConvertirHTML);
+            Process procesoEnEjecucion = procesoCreado.start();
+
+            procesoEnEjecucion.waitFor();
+
+            if (procesoEnEjecucion.exitValue() != 0) {
+                System.err.println("Error: No se pudo exportar el archivo.");
+            } else {
+                System.out.println("La conversion fue realizada satisfactoriamente.");
+            }
+        } catch (IOException | InterruptedException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
     public static void main(String[] args) {
         try {
             Scanner sc = new Scanner(System.in);
@@ -55,11 +103,20 @@ public class ProcessBuilderLibreofficeTypeConverter {
                 do {
                     System.out.println(" - Seleccione el formato al que desea exportar: ");
                     System.out.println(" 1. PDF");
+                    System.out.println(" 2. JPEG");
+                    System.out.println(" 3. HTML");
+                    System.out.println(" 4. Salir");
                     formato = sc.nextInt();
 
                     switch (formato) {
                         case 1:
                             convertirPDF(archivo);
+                            break;
+                        case 2:
+                            convertirJPEG(archivo);
+                            break;
+                        case 3:
+                            convertirHTML(archivo);
                             break;
                         default:
                             System.out.println("Cerrando programa.");
