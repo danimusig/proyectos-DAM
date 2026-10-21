@@ -26,36 +26,6 @@ public class RuntimeLibreofficeTypeConverter {
         }
     }
 
-    public static void convertirJPEG(String archivo) {
-        try {
-            Process conversorJPEG = Runtime.getRuntime().exec("libreoffice --headless --convert-to jpeg " + archivo);
-
-            int codigoRetorno = conversorJPEG.waitFor();
-            if (codigoRetorno != 0) {
-                System.out.println("Hubo un error al hacer la conversion.");
-            } else {
-                System.out.println("Conversion realizada exitosamente.");
-            }
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void convertirHTML(String archivo) {
-        try {
-            Process conversorHTML = Runtime.getRuntime().exec("libreoffice --headless --convert-to html " + archivo);
-
-            int codigoRetorno = conversorHTML.waitFor();
-            if (codigoRetorno != 0) {
-                System.out.println("Hubo un error al hacer la conversion.");
-            } else {
-                System.out.println("Conversion realizada exitosamente.");
-            }
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static void main(String[] args) {
         try {
             Scanner sc = new Scanner(System.in);
@@ -76,20 +46,11 @@ public class RuntimeLibreofficeTypeConverter {
                 do {
                     System.out.println(" - Seleccione el formato al que desea exportar: ");
                     System.out.println(" 1. PDF");
-                    System.out.println(" 2. JPEG");
-                    System.out.println(" 3. HTML");
-                    System.out.println(" 4. Salir");
                     formato = sc.nextInt();
 
                     switch (formato) {
                         case 1:
                             convertirPDF(archivo);
-                            break;
-                        case 2:
-                            convertirJPEG(archivo);
-                            break;
-                        case 3:
-                            convertirHTML(archivo);
                             break;
                         default:
                             System.out.println("Cerrando programa.");
