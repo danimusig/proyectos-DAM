@@ -1,58 +1,93 @@
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 /**
- * Esta clase accede a las utilidades de conversion de libreoffice usando Runtime
+ * Esta clase accede a las utilidades de conversion de libreoffice usando Runtime.exec()
  * @author danielms
- * @version 1.0
+ * @version 2.0
  *
  */
 public class RuntimeLibreofficeTypeConverter {
+    private static final Logger LOGGER = Logger.getLogger(RuntimeLibreofficeTypeConverter.class.getName());
 
-    public static void convertirPDF(String archivo) {
+    static {
         try {
-            Process conversorPDF = Runtime.getRuntime().exec("libreoffice --headless --convert-to pdf " + archivo);
-
-            int codigoRetorno = conversorPDF.waitFor();
-            if (codigoRetorno != 0) {
-                System.out.println("Hubo un error al hacer la conversion.");
-            } else {
-                System.out.println("Conversion realizada exitosamente.");
-            }
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
+            // Configura el logeo en archivo con rotación y formato de texto plano
+            FileHandler fileHandler = new FileHandler("export_procesos.log", true);
+            fileHandler.setFormatter(new SimpleFormatter());
+            LOGGER.addHandler(fileHandler);
+            LOGGER.setLevel(Level.ALL);
+        } catch (IOException e) {
+            System.err.println("No se pudo inicializar el manejador de archivos de log: " + e.getMessage());
         }
     }
 
-    public static void convertirJPEG(String archivo) {
+    public static void exportador(String archivo, String formato) {
+
+        LOGGER.info(String.format("Iniciando exportación. Archivo origen: '%s' -> Formato destino: '%s'", archivo, formato));
+        long tiempoInicio = System.currentTimeMillis();
+
+        // Creo el comando en un array de
+        String[] comandoExportacion = new String[]{
+                "libreoffice",
+                "--headless",
+                "--convert-to",
+                formato,
+                archivo
+        };
         try {
-            Process conversorJPEG = Runtime.getRuntime().exec("libreoffice --headless --convert-to jpeg " + archivo);
+            // Creo el proceso
+            Process exportador = Runtime.getRuntime().exec(comandoExportacion);
 
-            int codigoRetorno = conversorJPEG.waitFor();
-            if (codigoRetorno != 0) {
-                System.out.println("Hubo un error al hacer la conversion.");
-            } else {
-                System.out.println("Conversion realizada exitosamente.");
+            // Runtime.exec() mantiene divididas las salidas de e/s y error, ProcessBuilder permite el metodo redirectErrorStream(true) que manda los errores al mismo canal que la e/s.
+            // Captura de stdout
+            StringBuilder salidaProceso = new StringBuilder();
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(exportador.getInputStream()))) {
+                String linea;
+                while ((linea = reader.readLine()) != null) {
+                    salidaProceso.append(linea).append("\n");
+                }
             }
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 
-    public static void convertirHTML(String archivo) {
-        try {
-            Process conversorHTML = Runtime.getRuntime().exec("libreoffice --headless --convert-to html " + archivo);
-
-            int codigoRetorno = conversorHTML.waitFor();
-            if (codigoRetorno != 0) {
-                System.out.println("Hubo un error al hacer la conversion.");
-            } else {
-                System.out.println("Conversion realizada exitosamente.");
+            // Captura de stderr
+            StringBuilder errorProceso = new StringBuilder();
+            try (BufferedReader readerErr = new BufferedReader(new InputStreamReader(exportador.getErrorStream()))) {
+                String linea;
+                while ((linea = readerErr.readLine()) != null) {
+                    errorProceso.append(linea).append("\n");
+                }
             }
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
+
+            int exitCode = exportador.waitFor();
+            long duracion = System.currentTimeMillis() - tiempoInicio;
+
+            if (exitCode != 0) {
+                LOGGER.severe(String.format(
+                        "Fallo en la exportación (Código de salida: %d). Tiempo: %d ms.\nDetalle de salida de LibreOffice:\n%s",
+                        exitCode, duracion, salidaProceso.toString().trim()
+                ));
+                System.err.println("Error: No se pudo exportar el archivo. Revise los logs para más detalle.");
+            } else {
+                LOGGER.info(String.format(
+                        "Exportación completada exitosamente en %d ms. Código de salida: %d.\nSalida de LibreOffice:\n%s",
+                        duracion, exitCode, salidaProceso.toString().trim()
+                ));
+                System.out.println("La conversión fue realizada satisfactoriamente.");
+            }
+
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE, "Error de E/S al intentar ejecutar la conversión del archivo: " + archivo, e);
+        } catch (InterruptedException e) {
+            LOGGER.log(Level.SEVERE, "El proceso de conversión fue interrumpido inesperadamente para el archivo: " + archivo, e);
+            Thread.currentThread().interrupt();
         }
     }
 
@@ -70,34 +105,46 @@ public class RuntimeLibreofficeTypeConverter {
                     if (archivo.equals("0")) break;
                 } while (!new File(archivo).exists());
             } else {
-
                 int formato;
 
                 do {
                     System.out.println(" - Seleccione el formato al que desea exportar: ");
-                    System.out.println(" 1. PDF");
-                    System.out.println(" 2. JPEG");
-                    System.out.println(" 3. HTML");
-                    System.out.println(" 4. Salir");
+                    System.out.println(" 1. XHTML");
+                    System.out.println(" 2. PDF");
+                    System.out.println(" 3. EPUB");
+                    System.out.println(" 4. JPEG");
+                    System.out.println(" 5. PNG");
+                    System.out.println(" 6. WEBP");
+                    System.out.println(" 0. Salir");
                     formato = sc.nextInt();
 
                     switch (formato) {
                         case 1:
-                            convertirPDF(archivo);
+                            exportador(archivo, "html");
                             break;
                         case 2:
-                            convertirJPEG(archivo);
+                            exportador(archivo, "pdf");
                             break;
                         case 3:
-                            convertirHTML(archivo);
+                            exportador(archivo, "epub");
+                            break;
+                        case 4:
+                            exportador(archivo, "jpeg");
+                            break;
+                        case 5:
+                            exportador(archivo, "png");
+                            break;
+                        case 6:
+                            exportador(archivo, "webp");
                             break;
                         default:
                             System.out.println("Cerrando programa.");
                     }
-                } while (formato != 4);
+                } while (formato != 0);
             }
         } catch(InputMismatchException ex){
-            System.out.println("ERROR: Debe introducir un numero.");
+            LOGGER.warning("Entrada de usuario no válida introducida en el menú principal.");
+            System.out.println("Debe introducir un tipo de dato válido.");
         }
     }
 }
