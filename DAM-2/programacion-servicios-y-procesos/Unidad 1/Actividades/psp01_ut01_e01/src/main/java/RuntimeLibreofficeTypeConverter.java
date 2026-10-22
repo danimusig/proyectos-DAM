@@ -16,7 +16,7 @@ import java.util.logging.SimpleFormatter;
  *
  */
 public class RuntimeLibreofficeTypeConverter {
-    private static final Logger LOGGER = Logger.getLogger(RuntimeLibreofficeTypeConverter.class.getName());
+    private static final Logger LOGGER = Logger.getLogger("psp01.ut01.e01.03.log");
 
     static {
         try {
