@@ -1,4 +1,4 @@
-package es.iessanjose.acdat;
+package es.iessanjose.acdat.model;
 
 public class DbConfigDTO {
     private String host;
