@@ -33,7 +33,7 @@ public class DbConfigDTO {
     public void setPassword(String password) { this.password = password; }
 
     public String getJdbcUrl() {
-        return String.format("jdbc:mysql://%s:%d/%s?allowPublicKeyRetrieval=true&useSSL=false", host, port, dbName);
+        return String.format("jdbc:mysql://%s:%d/%s", host, port, dbName);
     }
 
     @Override
