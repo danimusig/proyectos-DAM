@@ -99,3 +99,6 @@ function validarBotonEditar() {
 
 botonInsertar.addEventListener("click", (validarBotonInsertar));
 botonEditar.addEventListener("click", (validarBotonEditar));
+
+
+// FUNCTION Vaciar: Vaciar los campos y focus.

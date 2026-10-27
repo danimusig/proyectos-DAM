@@ -7,7 +7,7 @@ public class ArreglaFicheroTextoSimplificado {
 
 
     public static void main(String[] args) {
-        static String nombreArchivo = "f_texto.txt";
+        String nombreArchivo = "f_texto.txt";
         public static File archivoOriginal = archivoExistente(nombreArchivo);
         public static File fTemp;
         {

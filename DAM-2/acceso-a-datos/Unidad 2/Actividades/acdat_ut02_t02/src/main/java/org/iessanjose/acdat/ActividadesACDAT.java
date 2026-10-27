@@ -1,6 +1,8 @@
 package org.iessanjose.acdat;
 
 import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ActividadesACDAT {
 
@@ -49,7 +51,7 @@ public class ActividadesACDAT {
 
 
         /* Ejercicio 2: Copiar un fichero de texto línea por línea */
-        String rutaInput = "input.txt";
+        /*String rutaInput = "input.txt";
         String rutaOutput = "output.txt";
         File textInput;
         File textOutput;
@@ -87,11 +89,51 @@ public class ActividadesACDAT {
         } catch (IOException e) {
             System.out.println("ERROR: No se pudo trabajar sobre e archivo");
         }
-    }
+    }*/
 
 
         /* Ejercicio 3: Contar lineas, palabras y caracteres en un fichero. */
+        String nomFichero = "f_texto.txt";
+        File f = new File(nomFichero);
+        int cantLineas = 0;
+        int cantPalabras = 0;
+        int cantLetras = 0;
 
+        if (!f.exists()) {
+            System.out.println("Fichero " + nomFichero + " no existe.");
+            return;
+        }
+
+        try (BufferedReader bfr = new BufferedReader(new FileReader(f))) {
+            File fTemp = File.createTempFile(nomFichero, "");
+            System.out.println("Creado fichero temporal: " + fTemp.
+                    getAbsolutePath());
+            BufferedWriter bfw = new BufferedWriter(new FileWriter(fTemp));
+            String linea = bfr.readLine();
+            while (linea != null) { // En resumen, lee de bfr y escribe en bfw
+
+                for (int i = 0; i < linea.length(); i++) {
+                    cantLetras++;
+                }
+
+                String[] palabras = linea.split(" ");
+                cantPalabras = palabras.length;
+
+                cantLineas++;
+
+                bfw.newLine();
+                linea = bfr.readLine();
+            }
+
+            System.out.println("Cantidad de Lineas: " + cantLineas);
+            System.out.println("Cantidad de Palabras: " + cantPalabras);
+            System.out.println("Cantidad de Letras: " + cantLetras);
+
+
+        } catch (Exception e) {
+
+        }
+    }
 
         /* Ejercicio 4: Buscar una palabra en un fichero de texto. */
         /* Ejercicio 5: Serialización y deserialización de objetos. */
