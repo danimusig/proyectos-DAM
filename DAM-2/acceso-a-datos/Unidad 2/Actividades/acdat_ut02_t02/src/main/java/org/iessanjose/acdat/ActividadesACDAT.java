@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class ActividadesACDAT {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         /* Ejercicio 1: Leer y escribir en ficheros de texto */
         /*String rutaInput = "input.txt";
@@ -51,8 +51,8 @@ public class ActividadesACDAT {
 
 
         /* Ejercicio 2: Copiar un fichero de texto línea por línea */
-        /*String rutaInput = "input.txt";
-        String rutaOutput = "output.txt";
+        /*String rutaInput = "source.txt";
+        String rutaOutput = "dest.txt";
         File textInput;
         File textOutput;
 
@@ -69,8 +69,8 @@ public class ActividadesACDAT {
             textOutput = new File(rutaOutput);
         }
 
-        textInput = new File("input.txt");
-        textOutput = new File("output.txt");
+        textInput = new File(rutaInput);
+        textOutput = new File(rutaOutput);
 
         try (BufferedReader br = new BufferedReader(new FileReader(textInput));
              BufferedWriter bw = new BufferedWriter(new FileWriter(textOutput))) {
@@ -93,7 +93,7 @@ public class ActividadesACDAT {
 
 
         /* Ejercicio 3: Contar lineas, palabras y caracteres en un fichero. */
-        String nomFichero = "f_texto.txt";
+        /*String nomFichero = "f_texto.txt";
         File f = new File(nomFichero);
         int cantLineas = 0;
         int cantPalabras = 0;
@@ -133,8 +133,82 @@ public class ActividadesACDAT {
         } catch (Exception e) {
 
         }
-    }
+    }*/
+
 
         /* Ejercicio 4: Buscar una palabra en un fichero de texto. */
+        String palabra = "patata";
+        int contPalabra = 0;
+        String nomFichero = " ";
+        File fichero = new File("f_texto_4.txt");
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fichero))) {
+            String linea = br.readLine();
+            while (linea != null) {
+                if (linea.equals(palabra)) {
+                    contPalabra++;
+                }
+                br.readLine();
+            }
+
+            System.out.println("La palabra " + palabra + " sale " + contPalabra + "veces en el texto.");
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
         /* Ejercicio 5: Serialización y deserialización de objetos. */
+        /*Persona p1 = new Persona(
+                "Daniel",
+                "Muñoz",
+                25,
+                "123456789D");
+
+        try {
+            if (!new File("f_persona_1.txt").exists()) {
+                File ficheroEntrada = new File("f_persona_1.txt");
+                ficheroEntrada.createNewFile();
+            }
+
+            if (!new File("f_persona_2.txt").exists()) {
+                File ficheroSalida = new File("f_persona_2.txt");
+                ficheroSalida.createNewFile();
+            }
+        } catch (IOException e) {
+
+        }
+
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("f_persona_2.txt"));
+             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("f_persona_1.txt"))) {
+                oos.writeObject(p1);
+                oos.flush();
+
+                Persona copiap1 = (Persona) ois.readObject();
+
+                System.out.println(copiap1.toString());
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }*/
+
+    /*Ejercicio 6: Crea un programa que liste todos los archivos y carpetas de un directorio
+    dado y permita crear, renombrar y eliminar archivos dentro del mismo.*/
+        /*File archivo = null;
+
+        if (!new File("ejemplo.txt").exists()) {
+            archivo = new File("ejemplo.txt");
+            archivo.createNewFile();
+        }
+        
+        archivo.listRoots();*/
+        
+    }
 }
