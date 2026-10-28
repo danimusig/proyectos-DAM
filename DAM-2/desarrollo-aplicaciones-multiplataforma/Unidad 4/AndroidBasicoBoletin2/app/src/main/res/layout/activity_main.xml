@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#E9E1E1">
+
+    <ImageView
+        android:id="@+id/viewLogo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toTopOf="@id/inputUsuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintVertical_bias="0.300"/>
+
+    <EditText
+        android:id="@+id/inputUsuario"
+        android:inputType="text"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:hint="Usuario"
+        app:layout_constraintBottom_toTopOf="@id/inputPasswd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewLogo"
+        app:layout_constraintHorizontal_bias="0.500" />
+
+    <EditText
+        android:id="@+id/inputPasswd"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_margin="0dp"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@id/botonLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputUsuario" />
+
+    <Button
+        android:id="@+id/botonLogin"
+        android:layout_width="125dp"
+        android:layout_height="55dp"
+        android:text="Acceder"
+        app:layout_constraintTop_toBottomOf="@id/inputPasswd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

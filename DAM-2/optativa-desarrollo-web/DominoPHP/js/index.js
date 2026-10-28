@@ -9,6 +9,81 @@ const productoEditar = document.getElementById("productoEditar");
 
 const botonEditar = document.querySelector(".btEditar");
 
+let DATOS= [];
+
+// INSERTAR PRODUCTOS
+
+// QuerySelector busca y devuelve el primer elemento del documento HTML que coincide con un selector CSS específico.
+const NOMBRE = document.querySelector("#producto");
+// Establece un listener, asignando una función de tipo evento.
+NOMBRE.addEventListener("keydown", teclado);
+
+
+//**** FUNCIONES *****
+// FUNCION teclado: RECOGE LA TECLA PULSADA.
+function teclado(e)
+{
+        let tecla=e.key;
+        if(tecla==="Enter")
+        {
+            leer();
+        }
+}
+
+function leer()
+{
+    const ESCRITO=NOMBRE.value.trim();
+    if(ESCRITO)
+    {
+        DATOS.push({"elNombre":ESCRITO, "estrellas":1})
+        escribir(ESCRITO);
+        
+    }
+}
+
+//FUNCIÓN ESCRIBIR: MUESTRA DATOS EN PANTALLA
+function escribir(valor)
+{
+    document.querySelector(".listaInsertar").insertAdjacentHTML("beforeend", `
+        <div class="linea" goyo="${DATOS.length-1}">
+            <div class="nombre">${valor}</div>
+            <div class="estrellas">
+                <img src = "img/estrella.png" onclick="unaMas(this)">
+            </div>
+        </div>
+        `)
+}
+
+//FUNCION unaMas: INCREMENTE LAS ESTRELLAS DENTRO DEL DIV (CUANDO CLICAMOS EN LA ESTRELLA)
+function unaMas(e) {
+    let hay=e.parentNode.querySelectorAll("img").length;
+    if (hay>=6) {
+        hay=0;
+        e.parentNode.innerHTML=`<img src="img/estrella.png" onclick="unaMas(this)">`
+    }
+
+    let indice=e.parentNode.parentNode.getAttribute("goyo");
+    DATOS[indice].estrellas=++hay;
+    e.parentNode.insertAdjacentHTML("beforehand", `
+        <img src="img/estrella.png" onclick="unaMas(this)">
+        `)
+}
+
+
+//FUNCION Vaciar: VACIA LOS CAMPOS Y FOCUS RELLENADOS POR USUARIO
+function vaciar() 
+{
+    NOMBRE.value="";
+    NOMBRE.focus();
+}
+
+//FUNCION insertar
+function insertar()
+{
+    const TITULO=document.querySelector("#titulo").value.trim();
+}
+
+// VALIDACIONES
 
 //Valido los datos campos y botones individualmente ya que no sé que vamos a querer hacer en el futuro y asi está mas encapsulado creo yo
 // Funcion para cambiar el css del borde del input dependiendo si es valido o no.
