@@ -11,44 +11,43 @@
         android:id="@+id/viewLogo"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        app:layout_constraintBottom_toTopOf="@id/inputUsuario"
+        android:background="#D7BCBC"
+        app:layout_constraintBottom_toTopOf="@id/etUsuario"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.500"
-        app:layout_constraintVertical_bias="0.300"/>
+        app:layout_constraintVertical_bias="0.300"
+        app:srcCompat="@mipmap/ic_launcher" />
 
     <EditText
-        android:id="@+id/inputUsuario"
-        android:inputType="text"
+        android:id="@+id/etUsuario"
         android:layout_width="300dp"
-        android:layout_height="45dp"
+        android:layout_height="60dp"
         android:hint="Usuario"
-        app:layout_constraintBottom_toTopOf="@id/inputPasswd"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/etPasswd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewLogo"
-        app:layout_constraintHorizontal_bias="0.500" />
+        app:layout_constraintTop_toBottomOf="@id/viewLogo" />
 
     <EditText
-        android:id="@+id/inputPasswd"
+        android:id="@+id/etPasswd"
         android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:layout_margin="0dp"
+        android:layout_height="60dp"
         android:hint="Contraseña"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@id/botonLogin"
+        app:layout_constraintBottom_toTopOf="@id/btAcceso"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputUsuario" />
+        app:layout_constraintTop_toBottomOf="@id/etUsuario" />
 
     <Button
-        android:id="@+id/botonLogin"
+        android:id="@+id/btAcceso"
         android:layout_width="125dp"
         android:layout_height="55dp"
         android:text="Acceder"
-        app:layout_constraintTop_toBottomOf="@id/inputPasswd"
+        app:layout_constraintTop_toBottomOf="@id/etPasswd"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
