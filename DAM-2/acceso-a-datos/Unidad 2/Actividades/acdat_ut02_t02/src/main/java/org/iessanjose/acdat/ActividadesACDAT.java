@@ -1,12 +1,16 @@
 package org.iessanjose.acdat;
 
 import java.io.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ActividadesACDAT {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)  {
 
         /* Ejercicio 1: Leer y escribir en ficheros de texto */
         /*String rutaInput = "input.txt";
@@ -161,7 +165,41 @@ public class ActividadesACDAT {
 
 
         /* Ejercicio 5: Serialización y deserialización de objetos. */
-        Persona p1 = new Persona(
+        /*Persona p1 = new Persona(
+                "Daniel",
+                "Muñoz",
+                25,
+                "123456789D");
+
+        try {
+            if (!new File("f_persona_1.txt").exists()) {
+                File ficheroEntrada = new File("f_persona_1.txt");
+                ficheroEntrada.createNewFile();
+            }
+
+            if (!new File("f_persona_2.txt").exists()) {
+                File ficheroSalida = new File("f_persona_2.txt");
+                ficheroSalida.createNewFile();
+            }
+        } catch (IOException e) {
+
+        }
+
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("f_persona_2.txt"));
+             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("f_persona_1.txt"))) {
+                oos.writeObject(p1);
+                oos.flush();
+
+                Persona copiap1 = (Persona) ois.readObject();
+
+                System.out.println(copiap1.toString());
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);Persona p1 = new Persona(
                 "Daniel",
                 "Muñoz",
                 25,
@@ -196,19 +234,12 @@ public class ActividadesACDAT {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
-        }
-    }
+        }*/
+
+
 
     /*Ejercicio 6: Crea un programa que liste todos los archivos y carpetas de un directorio
     dado y permita crear, renombrar y eliminar archivos dentro del mismo.*/
-        /*File archivo = null;
 
-        if (!new File("ejemplo.txt").exists()) {
-            archivo = new File("ejemplo.txt");
-            archivo.createNewFile();
-        }
-        
-        archivo.listRoots();*/
-        
     }
 }
