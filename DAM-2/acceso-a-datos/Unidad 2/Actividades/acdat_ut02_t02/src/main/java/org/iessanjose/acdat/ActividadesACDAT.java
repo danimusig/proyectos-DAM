@@ -137,7 +137,7 @@ public class ActividadesACDAT {
 
 
         /* Ejercicio 4: Buscar una palabra en un fichero de texto. */
-        String palabra = "patata";
+        /*String palabra = "patata";
         int contPalabra = 0;
         String nomFichero = " ";
         File fichero = new File("f_texto_4.txt");
@@ -157,11 +157,11 @@ public class ActividadesACDAT {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
+    }*/
 
 
         /* Ejercicio 5: Serialización y deserialización de objetos. */
-        /*Persona p1 = new Persona(
+        Persona p1 = new Persona(
                 "Daniel",
                 "Muñoz",
                 25,
@@ -197,7 +197,7 @@ public class ActividadesACDAT {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-    }*/
+    }
 
     /*Ejercicio 6: Crea un programa que liste todos los archivos y carpetas de un directorio
     dado y permita crear, renombrar y eliminar archivos dentro del mismo.*/
