@@ -199,7 +199,9 @@ public class ActividadesACDAT {
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);Persona p1 = new Persona(
+            throw new RuntimeException(e);
+
+            Persona p1 = new Persona(
                 "Daniel",
                 "Muñoz",
                 25,
@@ -224,9 +226,9 @@ public class ActividadesACDAT {
                 oos.writeObject(p1);
                 oos.flush();
 
-                Persona copiap1 = (Persona) ois.readObject();
+                Persona copia1 = (Persona) ois.readObject();
 
-                System.out.println(copiap1.toString());
+                System.out.println(copia1.toString());
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -237,9 +239,58 @@ public class ActividadesACDAT {
         }*/
 
 
+        /*Ejercicio 6: Crea un programa que liste todos los archivos y carpetas de un directorio
+        dado y permita crear, renombrar y eliminar archivos dentro del mismo.*/
+        File directory = new File("dir");
+        directory.mkdir();
 
-    /*Ejercicio 6: Crea un programa que liste todos los archivos y carpetas de un directorio
-    dado y permita crear, renombrar y eliminar archivos dentro del mismo.*/
+        String[] files = {"file1.csv", "file2.txt"};
+        for (String file: files) {
+            try {
+                new File(directory, file).createNewFile();
+            } catch (IOException e) {
+                System.err.println("No se pudo crear el archivo: " + file);
+            }
+        }
+
+        for (File file : directory.listFiles()) {
+            System.out.println(file);
+        }
+
+        File renamedDirectory = new File("renamedDir.txt");
+        directory.renameTo(renamedDirectory);
+
+        directory.delete();
+
+
+        /*Ejercicio 7: Implementa un programa que lea un fichero binario y lo copie en otro fichero.*/
+        /*try {
+            if (!new File("ejercicio7.bin").exists()) {
+                File ficheroEntrada = new File("ejercicio7.bin");
+                ficheroEntrada.createNewFile();
+            }
+        } catch (IOException e) {
+            System.err.println("Error: El archivo no existe.");
+        }
+
+        try (ObjectInputStream fis = new ObjectInputStream(new FileInputStream("ejercicio7.bin"));
+             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("ejercicio7.bin"))) {
+
+            Persona p1 = new Persona(
+                    "Daniel",
+                    "Muñoz",
+                    25,
+                    "123456789D");
+
+            oos.writeObject(p1);
+
+            Persona copiap1 = (Persona) fis.readObject();
+            System.out.println(copiap1.toString());
+
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }*/
+
 
     }
 }
