@@ -241,7 +241,7 @@ public class ActividadesACDAT {
 
         /*Ejercicio 6: Crea un programa que liste todos los archivos y carpetas de un directorio
         dado y permita crear, renombrar y eliminar archivos dentro del mismo.*/
-        File directory = new File("dir");
+        /*File directory = new File("dir");
         directory.mkdir();
 
         String[] files = {"file1.csv", "file2.txt"};
@@ -260,11 +260,11 @@ public class ActividadesACDAT {
         File renamedDirectory = new File("renamedDir.txt");
         directory.renameTo(renamedDirectory);
 
-        directory.delete();
+        directory.delete();*/
 
 
         /*Ejercicio 7: Implementa un programa que lea un fichero binario y lo copie en otro fichero.*/
-        /*try {
+        try {
             if (!new File("ejercicio7.bin").exists()) {
                 File ficheroEntrada = new File("ejercicio7.bin");
                 ficheroEntrada.createNewFile();
@@ -289,8 +289,6 @@ public class ActividadesACDAT {
 
         } catch (IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);
-        }*/
-
-
+        }
     }
 }
