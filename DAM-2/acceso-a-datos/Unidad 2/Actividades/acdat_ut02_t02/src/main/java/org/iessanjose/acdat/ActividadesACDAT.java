@@ -55,9 +55,13 @@ public class ActividadesACDAT {
         // ejercicio14();
         // ejercicio15();
         // ejercicio16();
-        ejercicio17("datos.txt", "datos.enc", "datos_descifrados.txt");
+        // ejercicio17("datos.txt", "datos.enc", "datos_descifrados.txt");
     }
 
+    /* -------------------------------------------------------------
+     * Ejercicio 1: Copiar un fichero de texto línea por línea
+     * Commit 1: acdat.ut02.t01.01
+     * ------------------------------------------------------------- */
     public static void ejercicio1() {
         File textInput = new File("input.txt");
         File textOutput = new File("output.txt");
