@@ -54,8 +54,8 @@ public class ActividadesACDAT {
         // ejercicio13();
         // ejercicio14();
         // ejercicio15();
-        ejercicio16();
-        // ejercicio17("datos.txt", "datos.enc", "datos_descifrados.txt");
+        // ejercicio16();
+        ejercicio17("datos.txt", "datos.enc", "datos_descifrados.txt");
     }
 
     public static void ejercicio1() {
