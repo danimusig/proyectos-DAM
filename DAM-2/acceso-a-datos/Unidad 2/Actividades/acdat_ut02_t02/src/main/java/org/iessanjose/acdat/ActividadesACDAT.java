@@ -50,8 +50,8 @@ public class ActividadesACDAT {
         // ejercicio9();
         // ejercicio10();
         // ejercicio11("input.txt", "output_reemplazado.txt", "Java", "Kotlin");
-        ejercicio12("fichero1.txt", "fichero2.txt");
-        // ejercicio13();
+        // ejercicio12("fichero1.txt", "fichero2.txt");
+        ejercicio13();
         // ejercicio14();
         // ejercicio15();
         // ejercicio16();
