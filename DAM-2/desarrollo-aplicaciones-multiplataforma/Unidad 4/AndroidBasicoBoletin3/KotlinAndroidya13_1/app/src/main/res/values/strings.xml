@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">kotlinAndroidYa13_1</string>
+    <string name="ingrese_mail">ingrese mail</string>
+    <string name="ejecutar">ejecutar</string>
+</resources>

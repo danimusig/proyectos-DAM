@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">KotlinAndroidYa16</string>
+    <string name="ingrese_el_codigo_del_producto">Ingrese el codigo del producto</string>
+    <string name="ingrese_la_descripcion">Ingrese la descripcion</string>
+    <string name="ingrese_el_precio">Ingrese el precio</string>
+    <string name="consulta_por_descripcion">CONSULTA POR DESCRIPCION</string>
+    <string name="consulta_por_codigo">CONSULTA POR CODIGO</string>
+    <string name="alta">ALTA</string>
+    <string name="baja_por_codigo">BAJA POR CODIGO</string>
+    <string name="modificacion">MODIFICACION</string>
+</resources>
