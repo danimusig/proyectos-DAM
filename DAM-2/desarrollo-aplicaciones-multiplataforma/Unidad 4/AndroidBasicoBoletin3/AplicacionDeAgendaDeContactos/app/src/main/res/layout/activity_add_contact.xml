@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddContact"
+    android:background="@color/cardview_dark_background">
+
+    <TextView
+        android:id="@+id/tvTitleAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/a_adir_contacto"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@id/etAddNombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etAddNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/nombre"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/etAddEmail"
+        app:layout_constraintEnd_toEndOf="@id/tvTitleAdd"
+        app:layout_constraintStart_toStartOf="@id/tvTitleAdd"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleAdd"
+        app:layout_constraintVertical_weight="1"/>
+
+
+    <EditText
+        android:id="@+id/etAddEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="@string/telefono"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/etAddPhone"
+        app:layout_constraintEnd_toEndOf="@id/etAddNombre"
+        app:layout_constraintStart_toStartOf="@id/etAddNombre"
+        app:layout_constraintTop_toBottomOf="@id/etAddNombre" />
+
+    <EditText
+        android:id="@+id/etAddPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="phone"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/etAddEmail"
+        app:layout_constraintStart_toStartOf="@id/etAddEmail"
+        app:layout_constraintTop_toBottomOf="@id/etAddEmail" />
+
+    <Button
+        android:id="@+id/btAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="587dp" />
+
+    <Button
+        android:id="@+id/btBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Añadir"
+        tools:layout_editor_absoluteX="289dp"
+        tools:layout_editor_absoluteY="587dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

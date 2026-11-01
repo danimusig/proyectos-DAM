@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AgendaDeContactos</string>
+    <string name="a_adir_contacto">🙋 AÑADIR CONTACTO 📔</string>
+    <string name="nombre">Nombre</string>
+    <string name="telefono">Telefono</string>
+    <string name="email">Email</string>
 </resources>

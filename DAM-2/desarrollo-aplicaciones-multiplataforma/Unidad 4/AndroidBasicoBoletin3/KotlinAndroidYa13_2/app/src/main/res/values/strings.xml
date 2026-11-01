@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">KotlinAndroidYa13_2</string>
+    <string name="nombre_de_la_persona">nombre de la persona</string>
+    <string name="grabar">grabar</string>
+</resources>
