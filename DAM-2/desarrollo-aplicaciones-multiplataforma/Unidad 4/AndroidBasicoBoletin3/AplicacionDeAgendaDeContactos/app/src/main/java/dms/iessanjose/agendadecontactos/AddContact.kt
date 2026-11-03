@@ -1,7 +1,11 @@
 package dms.iessanjose.agendadecontactos
 
+import android.content.ContentValues
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,6 +22,28 @@ class AddContact : AppCompatActivity() {
             insets
         }
 
-        val campoNombre = findViewById<EditText>(R.id.)
+        val bundle = intent.extras
+        val dato = bundle?.get
+        val campoNombre = findViewById<EditText>(R.id.etAddNombre)
+        val campoTelefono = findViewById<EditText>(R.id.etAddPhone)
+        val campoEmail = findViewById<EditText>(R.id.etAddEmail)
+        val botonAnyadir = findViewById<Button>(R.id.btAdd)
+
+        botonAnyadir.setOnClickListener {
+            val intento1 = Intent(this, MainActivity::class.java)
+            intento1.putExtra("direccion", et1.text.toString())
+            startActivity(intento1)
+
+            val admin = AdminSQLiteOpenHelper(this, "agendaContactos", null, 1)
+            val bd = admin.writableDatabase
+            val registroContacto = ContentValues()
+            registroContacto.put("telefono", campoTelefono.text.toString())
+            registroContacto.put("nombre", campoNombre.text.toString())
+            registroContacto.put("correo", campoEmail.text.toString())
+            bd.insert("Contactos", null, registroContacto)
+            bd.close()
+            Toast.makeText(this, "Contacto añadido correctamente", Toast.LENGTH_SHORT).show()
+
+        }
     }
 }

@@ -8,10 +8,10 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Añadir"
         tools:layout_editor_absoluteX="292dp"
         tools:layout_editor_absoluteY="665dp" />
 
@@ -19,7 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="9dp">
+        tools:layout_editor_absoluteY="9dp"
+        android:background="@color/cardview_dark_background">
 
     </ListView>
 
