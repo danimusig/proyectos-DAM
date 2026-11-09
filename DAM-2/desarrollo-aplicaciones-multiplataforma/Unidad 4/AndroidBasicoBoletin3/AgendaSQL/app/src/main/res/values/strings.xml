@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AgendaContactosSQL</string>
+    <string name="a_adir_contacto">anyadir contacto\n</string>
+    <string name="nombre">nombre</string>
+    <string name="telefono">telefono</string>
+    <string name="email">email</string>
+    <string name="volver">Volver</string>
+    <string name="a_adir">Añadir</string>
+    <string name="editar_contacto">editar contacto</string>
+</resources>

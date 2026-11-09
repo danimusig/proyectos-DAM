@@ -2,11 +2,7 @@ package org.iessanjose.acdat;
 
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -26,8 +22,6 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 import java.lang.reflect.Type;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -38,7 +32,6 @@ import java.util.logging.SimpleFormatter;
 
 public class ActividadesACDAT {
     public static void main(String[] args) {
-        // Descomentar el método según el ejercicio a probar:
         // ejercicio1();
         // ejercicio2();
         // ejercicio3();
@@ -156,7 +149,7 @@ public class ActividadesACDAT {
             String linea = bfr.readLine();
             while (linea != null) {
                 cantLineas++;
-                cantCaracteres += linea.length();
+                cantCaracteres += linea.trim().length();
 
                 if (!linea.trim().isEmpty()) {
                     String[] palabras = linea.trim().split("\\s+");
@@ -202,7 +195,6 @@ public class ActividadesACDAT {
             while (linea != null) {
                 String[] palabras = linea.split("\\s+");
                 for (String p : palabras) {
-                    // Limpiar signos de puntuación básicos si los hubiera
                     p = p.replaceAll("[^a-zA-ZáéíóúÁÉÍÓÚñÑ]", "");
                     if (p.equalsIgnoreCase(palabraBusqueda)) {
                         contPalabra++;
@@ -238,7 +230,7 @@ public class ActividadesACDAT {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(ficheroSerial))) {
             Persona copiaP1 = (Persona) ois.readObject();
             System.out.println("[Ej 5] Objeto deserializado con éxito:");
-            System.out.println("  -> Nombre: " + copiaP1.getNommbre() + " " + copiaP1.getApellido() +
+            System.out.println("  -> Nombre: " + copiaP1.getNombre() + " " + copiaP1.getApellido() +
                     ", Edad: " + copiaP1.getEdad() + ", DNI: " + copiaP1.getDNI());
         } catch (IOException | ClassNotFoundException e) {
             System.err.println("Error al deserializar: " + e.getMessage());
@@ -472,7 +464,7 @@ public class ActividadesACDAT {
 
             System.out.println("--- Lista de Personas leídas del JSON ---");
             for (Persona p : personas) {
-                System.out.println("Nombre: " + p.getNommbre() + " " + p.getApellido() +
+                System.out.println("Nombre: " + p.getNombre() + " " + p.getApellido() +
                         ", Edad: " + p.getEdad() + ", DNI: " + p.getDNI());
             }
         } catch (IOException e) {
@@ -519,7 +511,7 @@ public class ActividadesACDAT {
                 Element elemPersona = doc.createElement("persona");
 
                 Element nombre = doc.createElement("nombre");
-                nombre.appendChild(doc.createTextNode(p.getNommbre()));
+                nombre.appendChild(doc.createTextNode(p.getNombre()));
                 elemPersona.appendChild(nombre);
 
                 Element apellido = doc.createElement("apellido");

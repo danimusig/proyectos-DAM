@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddContact"
+    android:background="@color/cardview_dark_background">
+
+    <TextView
+        android:id="@+id/tvTitleNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@id/tvViewName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:layout_marginTop="100dp"
+        app:layout_constraintBottom_toTopOf="@id/tvViewPhone"
+        app:layout_constraintEnd_toEndOf="@id/tvTitleNombre"
+        app:layout_constraintStart_toStartOf="@id/tvTitleNombre"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleNombre" />
+
+    <TextView
+        android:id="@+id/tvViewPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:layout_marginVertical="40dp"
+        app:layout_constraintBottom_toTopOf="@id/etViewEmail"
+        app:layout_constraintEnd_toEndOf="@id/tvViewName"
+        app:layout_constraintStart_toStartOf="@id/tvViewName"
+        app:layout_constraintTop_toBottomOf="@id/tvViewName" />
+
+    <TextView
+        android:id="@+id/etViewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tvViewPhone"
+        app:layout_constraintStart_toStartOf="@id/tvViewPhone"
+        app:layout_constraintTop_toBottomOf="@id/tvViewPhone" />
+
+    <Button
+        android:id="@+id/btAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        android:layout_marginVertical="80dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintTop_toBottomOf="@id/etViewEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btEditar"/>
+
+    <Button
+        android:id="@+id/btEditar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar"
+        android:layout_marginVertical="80dp"
+        app:layout_constraintTop_toBottomOf="@id/etViewEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btAdd"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

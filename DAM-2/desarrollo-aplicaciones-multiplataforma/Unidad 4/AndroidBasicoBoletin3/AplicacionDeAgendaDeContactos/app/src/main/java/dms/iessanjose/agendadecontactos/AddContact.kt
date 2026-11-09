@@ -1,5 +1,6 @@
 package dms.iessanjose.agendadecontactos
 
+import android.app.Activity
 import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
@@ -23,27 +24,25 @@ class AddContact : AppCompatActivity() {
         }
 
         val bundle = intent.extras
-        val dato = bundle?.get
         val campoNombre = findViewById<EditText>(R.id.etAddNombre)
         val campoTelefono = findViewById<EditText>(R.id.etAddPhone)
         val campoEmail = findViewById<EditText>(R.id.etAddEmail)
-        val botonAnyadir = findViewById<Button>(R.id.btAdd)
+        val botonVolver = findViewById<Button>(R.id.btAdd) // btAdd en el XML contiene "Volver"
+        val botonAnyadir = findViewById<Button>(R.id.btBack) // btBack en el XML contiene "Añadir"
 
         botonAnyadir.setOnClickListener {
-            val intento1 = Intent(this, MainActivity::class.java)
-            intento1.putExtra("direccion", et1.text.toString())
-            startActivity(intento1)
+            val resultIntent = Intent().apply {
+                putExtra("nombre", campoNombre.text.toString())
+                putExtra("telefono", campoTelefono.text.toString())
+                putExtra("email", campoEmail.text.toString())
+            }
+            setResult(Activity.RESULT_OK, resultIntent)
+            finish()
+        }
 
-            val admin = AdminSQLiteOpenHelper(this, "agendaContactos", null, 1)
-            val bd = admin.writableDatabase
-            val registroContacto = ContentValues()
-            registroContacto.put("telefono", campoTelefono.text.toString())
-            registroContacto.put("nombre", campoNombre.text.toString())
-            registroContacto.put("correo", campoEmail.text.toString())
-            bd.insert("Contactos", null, registroContacto)
-            bd.close()
-            Toast.makeText(this, "Contacto añadido correctamente", Toast.LENGTH_SHORT).show()
-
+        botonVolver.setOnClickListener {
+            setResult(Activity.RESULT_CANCELED)
+            finish()
         }
     }
 }
