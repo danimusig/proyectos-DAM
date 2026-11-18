@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">App Tareas</string>
+    <string name="lista_tareas">Lista de Tareas</string>
+    <string name="anadir_tarea">Añadir Tarea</string>
+    <string name="nueva_tarea">Nueva Tarea</string>
+    <string name="editar_tarea">Editar Tarea</string>
+    <string name="detalle_tarea">Detalle de la Tarea</string>
+    <string name="nombre_tarea">Nombre de la tarea</string>
+    <string name="nombre_tarea_hint">Introduce el nombre</string>
+    <string name="descripcion">Descripción</string>
+    <string name="descripcion_hint">Introduce una descripción</string>
+    <string name="fecha_vencimiento">Fecha de vencimiento</string>
+    <string name="prioridad">Prioridad</string>
+    <string name="alta">Alta</string>
+    <string name="media">Media</string>
+    <string name="baja">Baja</string>
+    <string name="completada">Completada</string>
+    <string name="guardar">Guardar</string>
+    <string name="guardar_cambios">Guardar cambios</string>
+    <string name="volver">Volver</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
+</resources>

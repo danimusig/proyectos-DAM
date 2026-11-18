@@ -7,56 +7,106 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-   <SeekBar
-       android:id="@+id/mediaPlayer"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintBottom_toTopOf="@id/tvTiempoRestante" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="223dp"
+        android:layout_height="219dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toTopOf="@id/artistName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tvTiempoRestante"
+        android:id="@+id/artistName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tiempo Restante"
-        app:layout_constraintStart_toStartOf="@id/mediaPlayer"
-        app:layout_constraintTop_toBottomOf="@id/mediaPlayer" />
+        android:layout_height="19dp"
+        android:text="@string/ac_dc"
+        app:layout_constraintBottom_toTopOf="@id/songName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
-        android:id="@+id/tvTiempoTotal"
+        android:id="@+id/songName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tiempo Total"
-        app:layout_constraintTop_toBottomOf="@id/mediaPlayer"
-        app:layout_constraintEnd_toEndOf="@id/mediaPlayer" />
+        android:layout_marginTop="8dp"
+        android:text="@string/let_there_be_rock"
+        app:layout_constraintBottom_toTopOf="@id/mediaTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/artistName" />
 
     <SeekBar
-        android:id="@+id/volumen"
-        android:layout_width="match_parent"
+        android:id="@+id/mediaTime"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/mediaPlayer"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <Button
-        android:id="@+id/pausa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/volumen"
-        app:layout_constraintBottom_toTopOf="@id/continuar"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/volumeBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/songName" />
+
+    <SeekBar
+        android:id="@+id/volumeBar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/playBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mediaTime" />
+
+    <TextView
+        android:id="@+id/totalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/_00_00"
+        app:layout_constraintTop_toBottomOf="@+id/mediaTime"
+        app:layout_constraintStart_toStartOf="@id/mediaTime" />
+
+    <TextView
+        android:id="@+id/currentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/_00_00"
+        app:layout_constraintTop_toBottomOf="@+id/mediaTime"
+        app:layout_constraintEnd_toEndOf="@id/mediaTime"/>
 
     <Button
-        android:id="@+id/continuar"
+        android:id="@+id/playBtn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="@string/play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/stopBtn"
+        app:layout_constraintStart_toEndOf="@id/pauseBtn"
+        app:layout_constraintTop_toBottomOf="@id/volumeBar" />
 
     <Button
-        android:id="@+id/detener"
+        android:id="@+id/stopBtn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="@string/stop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/playBtn"
+        app:layout_constraintTop_toBottomOf="@id/volumeBar" />
+
+    <Button
+        android:id="@+id/pauseBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pause"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/playBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/volumeBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

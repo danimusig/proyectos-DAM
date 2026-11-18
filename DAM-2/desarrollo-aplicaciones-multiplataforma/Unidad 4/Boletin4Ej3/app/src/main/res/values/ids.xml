@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tvNombreLabel" type="id"/>
+    <item name="tvDescLabel" type="id" />
+    <item name="tvFechaLabel" type="id" />
+    <item name="tvPrioridadLabel" type="id" />
+    <item name="tvCompletadaLabel" type="id" />
+</resources>

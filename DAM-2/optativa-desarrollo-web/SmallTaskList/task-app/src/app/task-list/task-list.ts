@@ -6,6 +6,7 @@ import { TaskService } from '../task';
   styleUrl: './task-list.css',
   templateUrl: './task-list.html',
 })
+
 export class TaskList {
   newTitle = '';
 
