@@ -1,0 +1,194 @@
+.workspace-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.calendar-card {
+  background-color: var(--mat-sys-surface-container-low);
+}
+
+// Dot indicator inside mat-calendar cells that contain tasks
+::ng-deep .has-tasks-dot .mat-calendar-body-cell-content::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--mat-sys-primary);
+}
+
+.tasks-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-card {
+  background-color: var(--mat-sys-surface-container-low);
+
+  .task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 0.75rem;
+
+    @media (max-width: 650px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+  }
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  h2 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+
+  .filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+
+    .active-filter {
+      background-color: var(--mat-sys-secondary-container);
+      color: var(--mat-sys-on-secondary-container);
+      border-color: transparent;
+    }
+  }
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.task-item {
+  padding: 0.75rem 1rem;
+  background-color: var(--mat-sys-surface-container-lowest);
+  transition: opacity 0.2s ease, transform 0.15s ease;
+
+  &.completed-task {
+    opacity: 0.65;
+
+    .task-title {
+      text-decoration: line-through;
+    }
+  }
+
+  .task-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .task-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .task-title-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .task-title {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .task-desc {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--mat-sys-on-surface-variant);
+  }
+
+  .task-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    color: var(--mat-sys-on-surface-variant);
+  }
+
+  .task-actions {
+    display: flex;
+    gap: 0.25rem;
+  }
+}
+
+.priority-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+
+  &.priority-high {
+    background-color: var(--mat-sys-error-container);
+    color: var(--mat-sys-on-error-container);
+  }
+
+  &.priority-medium {
+    background-color: var(--mat-sys-tertiary-container);
+    color: var(--mat-sys-on-tertiary-container);
+  }
+
+  &.priority-low {
+    background-color: var(--mat-sys-surface-variant);
+    color: var(--mat-sys-on-surface-variant);
+  }
+}
+
+.empty-state {
+  padding: 2.5rem 1rem;
+  text-align: center;
+  color: var(--mat-sys-on-surface-variant);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  mat-icon {
+    font-size: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  p {
+    margin: 0;
+  }
+}

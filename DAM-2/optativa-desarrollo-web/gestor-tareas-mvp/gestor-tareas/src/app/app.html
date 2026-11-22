@@ -1,0 +1,28 @@
+<mat-toolbar class="navbar">
+  <span class="brand">TaskFlow MVP</span>
+
+  <nav class="nav-links">
+    <a mat-button routerLink="/tareas" routerLinkActive="active-link">
+      <mat-icon>checklist</mat-icon>
+      Tareas y Calendario
+    </a>
+    <a mat-button routerLink="/estadisticas" routerLinkActive="active-link">
+      <mat-icon>bar_chart</mat-icon>
+      Estadísticas
+    </a>
+  </nav>
+
+  <span class="spacer"></span>
+
+  <button
+    mat-icon-button
+    (click)="themeService.toggleTheme()"
+    aria-label="Cambiar tema"
+  >
+    <mat-icon>{{ themeService.isDarkMode() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+  </button>
+</mat-toolbar>
+
+<main class="container">
+  <router-outlet />
+</main>

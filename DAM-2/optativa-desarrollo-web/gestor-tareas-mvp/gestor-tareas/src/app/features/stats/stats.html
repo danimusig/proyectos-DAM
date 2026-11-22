@@ -1,0 +1,123 @@
+<div class="stats-container">
+  <header class="stats-header">
+    <div>
+      <h1>Resumen y Estadísticas</h1>
+      <p>Métricas calculadas en tiempo real sobre tus tareas actuales</p>
+    </div>
+
+    <a mat-stroked-button routerLink="/tareas">
+      <mat-icon>arrow_back</mat-icon>
+      Volver a tareas
+    </a>
+  </header>
+
+  @if (stats().total === 0) {
+    <mat-card appearance="outlined" class="empty-stats">
+      <mat-icon>insights</mat-icon>
+      <h2>Aún no hay datos suficientes</h2>
+      <p>Crea algunas tareas en el calendario para visualizar tu progreso y gráficos.</p>
+      <a mat-flat-button routerLink="/tareas">Crear primera tarea</a>
+    </mat-card>
+  } @else {
+    <!-- 1. KPI Summary Cards -->
+    <section class="kpi-grid">
+      <mat-card appearance="outlined" class="kpi-card">
+        <span class="kpi-label">Total de tareas</span>
+        <span class="kpi-value">{{ stats().total }}</span>
+        <span class="kpi-hint">Registradas en el sistema</span>
+      </mat-card>
+
+      <mat-card appearance="outlined" class="kpi-card">
+        <span class="kpi-label">Completadas</span>
+        <span class="kpi-value success-text">{{ stats().completed }}</span>
+        <span class="kpi-hint">{{ stats().completionRate }}% del total</span>
+      </mat-card>
+
+      <mat-card appearance="outlined" class="kpi-card">
+        <span class="kpi-label">Pendientes</span>
+        <span class="kpi-value">{{ stats().pending }}</span>
+        <span class="kpi-hint">Por finalizar</span>
+      </mat-card>
+
+      <mat-card appearance="outlined" class="kpi-card">
+        <span class="kpi-label">Atrasadas</span>
+        <span class="kpi-value" [class.danger-text]="overdueCount() > 0">
+          {{ overdueCount() }}
+        </span>
+        <span class="kpi-hint">Con fecha anterior a hoy</span>
+      </mat-card>
+    </section>
+
+    <!-- 2. Global Completion Progress Bar -->
+    <mat-card appearance="outlined" class="progress-card">
+      <mat-card-header>
+        <mat-card-title>Progreso global de cumplimiento</mat-card-title>
+        <mat-card-subtitle>
+          {{ stats().completed }} de {{ stats().total }} tareas completadas ({{ stats().completionRate }}%)
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content class="progress-content">
+        <mat-progress-bar
+          mode="determinate"
+          [value]="stats().completionRate"
+        />
+      </mat-card-content>
+    </mat-card>
+
+    <!-- 3. Charts Row: Priority Distribution & 7-Day Workload -->
+    <section class="charts-grid">
+      <!-- Priority Breakdown -->
+      <mat-card appearance="outlined" class="chart-card">
+        <mat-card-header>
+          <mat-card-title>Distribución por prioridad</mat-card-title>
+          <mat-card-subtitle>Porcentaje sobre el total de tareas</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content class="priority-list">
+          @for (row of priorityRows(); track row.key) {
+            <div class="priority-row">
+              <div class="priority-meta">
+                <span class="priority-name">{{ row.label }}</span>
+                <span class="priority-numbers">
+                  {{ row.completed }}/{{ row.total }} completadas ({{ row.sharePercent }}%)
+                </span>
+              </div>
+              <mat-progress-bar
+                mode="determinate"
+                [value]="row.sharePercent"
+                [class]="row.cssClass"
+              />
+            </div>
+          }
+        </mat-card-content>
+      </mat-card>
+
+      <!-- 7-Day Vertical Bar Chart -->
+      <mat-card appearance="outlined" class="chart-card">
+        <mat-card-header>
+          <mat-card-title>Carga de los próximos 7 días</mat-card-title>
+          <mat-card-subtitle>Tareas programadas por día</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div class="bar-chart">
+            @for (bar of weeklyBars(); track bar.isoDate) {
+              <div class="bar-column" [class.today-column]="bar.isToday">
+                <span class="bar-count">{{ bar.count }}</span>
+                <div class="bar-track">
+                  <div
+                    class="bar-fill"
+                    [style.height.%]="bar.heightPercent"
+                    [title]="bar.isoDate + ': ' + bar.count + ' tarea(s)'"
+                  ></div>
+                </div>
+                <span class="bar-label">{{ bar.shortLabel }}</span>
+              </div>
+            }
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </section>
+  }
+</div>

@@ -1,0 +1,180 @@
+<div class="workspace-grid">
+  <!-- LEFT COLUMN: Interactive Material 3 Calendar -->
+  <section class="calendar-column">
+    <mat-card appearance="outlined" class="calendar-card">
+      <mat-card-header>
+        <mat-card-title>Calendario</mat-card-title>
+        <mat-card-subtitle>Selecciona un día para ver o asignar tareas</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-calendar
+          [selected]="selectedDate()"
+          (selectedChange)="onDateSelected($event)"
+          [dateClass]="dateClass"
+        />
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+  <!-- RIGHT COLUMN: Task Form + Filtered Task List -->
+  <section class="tasks-column">
+    <!-- Add / Edit Form Card -->
+    <mat-card appearance="outlined" class="form-card">
+      <mat-card-header>
+        <mat-card-title>
+          {{ editingTaskId() ? 'Editar tarea' : 'Nueva tarea' }}
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="task-form">
+          <div class="form-row">
+            <mat-form-field appearance="outline" class="title-field">
+              <mat-label>Título de la tarea</mat-label>
+              <input matInput formControlName="title" placeholder="Ej. Preparar API en PHP" />
+              @if (taskForm.controls.title.hasError('required')) {
+                <mat-error>El título es obligatorio</mat-error>
+              }
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="date-field">
+              <mat-label>Fecha</mat-label>
+              <input matInput type="date" formControlName="dueDate" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="priority-field">
+              <mat-label>Prioridad</mat-label>
+              <mat-select formControlName="priority">
+                <mat-option value="low">Baja</mat-option>
+                <mat-option value="medium">Media</mat-option>
+                <mat-option value="high">Alta</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Descripción (opcional)</mat-label>
+            <textarea
+              matInput
+              formControlName="description"
+              rows="2"
+              placeholder="Notas adicionales..."
+            ></textarea>
+          </mat-form-field>
+
+          <div class="form-actions">
+            @if (editingTaskId()) {
+              <button mat-stroked-button type="button" (click)="cancelEdit()">
+                Cancelar
+              </button>
+            }
+            <button
+              mat-flat-button
+              type="submit"
+              [disabled]="taskForm.invalid"
+            >
+              <mat-icon>{{ editingTaskId() ? 'save' : 'add' }}</mat-icon>
+              {{ editingTaskId() ? 'Guardar cambios' : 'Añadir tarea' }}
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Task List Header & Filter Controls -->
+    <div class="list-header">
+      <h2>
+        @if (showAllTasks()) {
+          Todas las tareas ({{ filteredTasks().length }})
+        } @else {
+          Tareas del {{ selectedDateIso() }} ({{ filteredTasks().length }})
+        }
+      </h2>
+
+      <div class="filter-buttons">
+        <button
+          mat-stroked-button
+          [class.active-filter]="!showAllTasks()"
+          (click)="showAllTasks.set(false)"
+        >
+          Por fecha
+        </button>
+        <button
+          mat-stroked-button
+          [class.active-filter]="showAllTasks()"
+          (click)="showAllTasks.set(true)"
+        >
+          Ver todas ({{ taskService.tasks().length }})
+        </button>
+      </div>
+    </div>
+
+    <!-- Task Cards -->
+    <div class="task-list">
+      @for (task of filteredTasks(); track task.id) {
+        <mat-card
+          appearance="outlined"
+          class="task-item"
+          [class.completed-task]="task.completed"
+        >
+          <div class="task-row">
+            <mat-checkbox
+              [checked]="task.completed"
+              (change)="taskService.toggleTaskCompletion(task.id)"
+              [aria-label]="'Marcar ' + task.title"
+            />
+
+            <div class="task-info">
+              <div class="task-title-line">
+                <span class="task-title">{{ task.title }}</span>
+                <span class="priority-badge" [class]="'priority-' + task.priority">
+                  {{ getPriorityLabel(task.priority) }}
+                </span>
+              </div>
+
+              @if (task.description) {
+                <p class="task-desc">{{ task.description }}</p>
+              }
+
+              <span class="task-date">
+                <mat-icon inline>event</mat-icon>
+                {{ task.dueDate }}
+              </span>
+            </div>
+
+            <div class="task-actions">
+              <button
+                mat-icon-button
+                (click)="startEdit(task)"
+                matTooltip="Editar tarea"
+                aria-label="Editar tarea"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button
+                mat-icon-button
+                (click)="taskService.deleteTask(task.id)"
+                matTooltip="Eliminar tarea"
+                aria-label="Eliminar tarea"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-card>
+      } @empty {
+        <mat-card appearance="outlined" class="empty-state">
+          <mat-icon>event_available</mat-icon>
+          <p>
+            {{
+              showAllTasks()
+                ? 'Aún no has creado ninguna tarea.'
+                : 'No hay tareas programadas para esta fecha.'
+            }}
+          </p>
+        </mat-card>
+      }
+    </div>
+  </section>
+</div>
