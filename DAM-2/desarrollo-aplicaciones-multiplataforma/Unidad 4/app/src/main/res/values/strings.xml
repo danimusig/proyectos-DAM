@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">GestorTareasSQL</string>
+    <string name="volver">volver</string>
+    <string name="guardar">guardar</string>
+    <string name="completada">completada</string>
+    <string name="baja">baja</string>
+    <string name="media">media</string>
+    <string name="alta">alta</string>
+    <string name="prioridad">prioridad</string>
+    <string name="fecha_vencimiento">fecha_vencimiento</string>
+    <string name="descripcion_hint">Descripcion</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="nueva_tarea">nueva tarea</string>
+    <string name="nombre_tarea">nombre tarea</string>
+    <string name="nombre_tarea_hint">"nombre "</string>
+    <string name="lista_tareas">Lista Tareas</string>
+    <string name="anadir_tarea">Añadir Tarea</string>
+    <string name="detalle_tarea">Detalle Tarea</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="editar_tarea">Editar Tarea</string>
+    <string name="guardar_cambios">Guardar Cambios</string>
+</resources>
